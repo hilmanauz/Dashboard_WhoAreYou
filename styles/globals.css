@@ -1,0 +1,36 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+@font-face {
+  font-family: calibri;
+  src: url("../public/calibri.ttf") format("truetype");
+}
+@font-face {
+  font-family: calibrib;
+  src: url("../public/calibrib.ttf") format("truetype");
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::placeholder {
+  color: #815230 !important;
+  opacity: 1;
+}
+
+:-ms-input-placeholder {
+  color: #815230 !important;
+}
+
+::-ms-input-placeholder {
+  color: #815230 !important;
+}
