@@ -173,7 +173,7 @@ function LandingPage() {
                         bgColor={"#BE9770"}
                         paddingX={"80px"}
                         paddingY={"30px"}
-                        onClick={() => null}
+                        onClick={() => Router.push("/dashboard")}
                         _hover={{ opacity: "0.8" }}
                         color={"white"}
                         fontSize={"22px"}
