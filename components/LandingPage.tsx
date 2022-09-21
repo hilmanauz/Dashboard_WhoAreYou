@@ -215,15 +215,26 @@ function LandingPage() {
                 textAlign={"center"}
               >
                 <Container maxW="80vw">
-                  <Box
-                    width={"full"}
+                  <Center
                     height={"80vh"}
                     borderRadius={"30px"}
                     bgColor={"#f9f3ea"}
                     boxShadow={
                       "0 20px 0 0 rgb(0 0 0 / 15%), 0 0 20px 0 rgb(0 0 0 / 14%)"
                     }
-                  ></Box>
+                    position={"relative"}
+                  >
+                    <iframe
+                      style={{
+                        height: "90%",
+                        width: "95%",
+                        position: "absolute",
+                      }}
+                      allow="autoplay; encrypted-media"
+                      src={`https://www.youtube.com/embed/sD_Z5Go175c?controls=0&rel=0`}
+                      allowFullScreen
+                    />
+                  </Center>
                   <Box height={"100px"} />
                 </Container>
                 <Box

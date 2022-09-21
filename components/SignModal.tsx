@@ -25,7 +25,7 @@ import useClient from "../engines/useClient";
 import LoginPage from "./LoginPage";
 import RegisterPage from "./RegisterPage";
 export type LoginForm = {
-  username: string;
+  email: string;
   password: string;
 };
 export type RegisterForm = {

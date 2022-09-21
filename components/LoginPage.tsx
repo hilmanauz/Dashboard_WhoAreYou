@@ -23,10 +23,11 @@ function LoginPage({
 }) {
   const formRef = useForm<LoginForm>({
     defaultValues: {
-      username: "",
+      email: "",
       password: "",
     },
   });
+  const errors = formRef.formState.errors;
   const [isLoading, setIsLoading] = React.useState(false);
   const client = useClient();
   const toast = useToast();
@@ -72,16 +73,32 @@ function LoginPage({
         <form onSubmit={formRef.handleSubmit(onSubmit)}>
           <VStack spacing={"30px"}>
             <Input
-              {...formRef.register("username")}
+              {...formRef.register("email", {
+                required: "E-mail is required",
+                pattern: {
+                  value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                  message: "invalid email address",
+                },
+              })}
               backgroundColor={"#E7D7C5"}
               _focusVisible={{
                 borderColor: "#969382",
                 boxShadow: "0 0 0 1px #969382",
               }}
               color={"#815230"}
-              placeholder={"Username"}
+              placeholder={"E-mail"}
               size={"lg"}
             />
+            {errors.email && (
+              <Text
+                fontSize={"0.875rem"}
+                marginTop={"0.5rem"}
+                lineHeight={"normal"}
+                color={"red"}
+              >
+                {errors.email.message}
+              </Text>
+            )}
             <Input
               {...formRef.register("password")}
               backgroundColor={"#E7D7C5"}

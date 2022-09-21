@@ -41,7 +41,7 @@ export default function useClient() {
     },
     login: async (data: LoginForm) => {
       const dataLogin = await axios.post(
-        `https://${TitleId}.playfabapi.com/Client/LoginWithPlayFab`,
+        `https://${TitleId}.playfabapi.com/Client/LoginWithEmailAddress`,
         { ...data, "TitleId": TitleId }
       );
       return dataLogin.data as AxiosResponse<LoginInstance, any>;
