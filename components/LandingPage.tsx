@@ -92,7 +92,7 @@ function LandingPage() {
                         _hover={{ opacity: "0.8" }}
                         onClick={() =>
                           Router.push(
-                            "https://play.everidea.id/games/buildtest/demo/whoareyou/"
+                            "https://play.everidea.id/games/buildtest/thinkhalf/whoareyou/"
                           )
                         }
                         color={"white"}
@@ -133,7 +133,7 @@ function LandingPage() {
                         paddingY={"30px"}
                         onClick={() =>
                           Router.push(
-                            "https://play.everidea.id/games/buildtest/demo/mobile/whoareyou/"
+                            "https://play.everidea.id/games/buildtest/thinkhalf/mobile/whoareyou/"
                           )
                         }
                         _hover={{ opacity: "0.8" }}
