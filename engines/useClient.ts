@@ -3,7 +3,7 @@ import useSWR from "swr";
 import { getCookie } from "cookies-next";
 import { LoginForm } from "../components/SignModal";
 
-export const TitleId = "393FD";
+export const TitleId = "1E9EA";
 
 type Register = {
   username: string;
