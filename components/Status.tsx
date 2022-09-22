@@ -97,16 +97,16 @@ function Status({
             bgColor={"#BE9770"}
             boxShadow={"0 5px 0 0 rgb(0 0 0 / 15%), 0 0 5px 0 rgb(0 0 0 / 14%)"}
           >
-            <span style={{ fontSize: "20px", color: "white" }}>&#9670;</span>
-            <Heading color={"white"} paddingInline={"20px"} fontSize={"36px"}>
+            <span style={{ fontSize: "1vw", color: "white" }}>&#9670;</span>
+            <Heading color={"white"} paddingInline={"20px"} fontSize={"1.8vw"}>
               Status
             </Heading>
-            <span style={{ fontSize: "20px", color: "white" }}>&#9670;</span>
+            <span style={{ fontSize: "1vw", color: "white" }}>&#9670;</span>
           </HStack>
         </Box>
         {userData.dataLogin.Stage1Grade.Value ? (
           <VStack width={"80%"} gap={4}>
-            <Heading color={"#C5A17E"} marginBottom={"-5px"}>
+            <Heading color={"#C5A17E"} marginBottom={"-5px"} fontSize={"2vw"}>
               Personality Result
             </Heading>
             <HStack width={"100%"} gap={2}>
@@ -121,7 +121,7 @@ function Status({
                     paddingTop={"20px"}
                   >
                     <Heading
-                      fontSize={"85px"}
+                      fontSize={"3.8vw"}
                       lineHeight={"0"}
                       fontWeight={"extrabold"}
                     >
@@ -134,12 +134,12 @@ function Status({
                     width={"100%"}
                     borderBottomRadius={"13px"}
                   >
-                    <Heading fontSize={"50px"}>
-                      {userData.dataLogin.DPercentage.Value}%
+                    <Heading fontSize={"2.8vw"}>
+                      {userData.dataLogin.DPercentage.Value}
                     </Heading>
                   </Center>
                 </Center>
-                <Text fontWeight={"bold"} color={"#5C4B44"}>
+                <Text fontWeight={"bold"} color={"#5C4B44"} fontSize={"0.8vw"}>
                   D-ominance
                 </Text>
               </VStack>
@@ -154,7 +154,7 @@ function Status({
                     paddingTop={"20px"}
                   >
                     <Heading
-                      fontSize={"85px"}
+                      fontSize={"3.8vw"}
                       lineHeight={"0"}
                       fontWeight={"extrabold"}
                     >
@@ -167,12 +167,12 @@ function Status({
                     width={"100%"}
                     borderBottomRadius={"13px"}
                   >
-                    <Heading fontSize={"50px"}>
-                      {userData.dataLogin.IPercentage.Value}%
+                    <Heading fontSize={"2.8vw"}>
+                      {userData.dataLogin.IPercentage.Value}
                     </Heading>
                   </Center>
                 </Center>
-                <Text fontWeight={"bold"} color={"#5C4B44"}>
+                <Text fontWeight={"bold"} color={"#5C4B44"} fontSize={"0.8vw"}>
                   I-nfluence
                 </Text>
               </VStack>
@@ -187,7 +187,7 @@ function Status({
                     paddingTop={"20px"}
                   >
                     <Heading
-                      fontSize={"85px"}
+                      fontSize={"3.8vw"}
                       lineHeight={"0"}
                       fontWeight={"extrabold"}
                     >
@@ -200,12 +200,12 @@ function Status({
                     width={"100%"}
                     borderBottomRadius={"13px"}
                   >
-                    <Heading fontSize={"50px"}>
-                      {userData.dataLogin.SPercentage.Value}%
+                    <Heading fontSize={"2.8vw"}>
+                      {userData.dataLogin.SPercentage.Value}
                     </Heading>
                   </Center>
                 </Center>
-                <Text fontWeight={"bold"} color={"#5C4B44"}>
+                <Text fontWeight={"bold"} color={"#5C4B44"} fontSize={"0.8vw"}>
                   S-teadiness
                 </Text>
               </VStack>
@@ -220,7 +220,7 @@ function Status({
                     paddingTop={"20px"}
                   >
                     <Heading
-                      fontSize={"85px"}
+                      fontSize={"3.8vw"}
                       lineHeight={"0"}
                       fontWeight={"extrabold"}
                     >
@@ -233,12 +233,12 @@ function Status({
                     width={"100%"}
                     borderBottomRadius={"13px"}
                   >
-                    <Heading fontSize={"50px"}>
-                      {userData.dataLogin.CPercentage.Value}%
+                    <Heading fontSize={"2.8vw"}>
+                      {userData.dataLogin.CPercentage.Value}
                     </Heading>
                   </Center>
                 </Center>
-                <Text fontWeight={"bold"} color={"#5C4B44"}>
+                <Text fontWeight={"bold"} color={"#5C4B44"} fontSize={"0.8vw"}>
                   C-ompliance
                 </Text>
               </VStack>
@@ -255,6 +255,7 @@ function Status({
                   alt={"D_dash"}
                 />
               </Box>
+              <Spacer />
               <VStack width={"70%"} alignItems={"normal"}>
                 <Text
                   color={"#C5A17E"}
@@ -262,7 +263,7 @@ function Status({
                   letterSpacing={0.5}
                   fontSize={{ base: "0.5vw", lg: "1.2vw" }}
                 >
-                  Nilai akhir anda adalah
+                  Kamu adalah tipe
                 </Text>
                 <Text
                   letterSpacing={0.3}

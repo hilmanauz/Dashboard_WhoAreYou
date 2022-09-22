@@ -106,11 +106,11 @@ function NilaiAkhir({
             bgColor={"#BE9770"}
             boxShadow={"0 5px 0 0 rgb(0 0 0 / 15%), 0 0 5px 0 rgb(0 0 0 / 14%)"}
           >
-            <span style={{ fontSize: "20px", color: "white" }}>&#9670;</span>
-            <Heading color={"white"} paddingInline={"20px"} fontSize={"36px"}>
+            <span style={{ fontSize: "1vw", color: "white" }}>&#9670;</span>
+            <Heading color={"white"} paddingInline={"20px"} fontSize={"1.8vw"}>
               Nilai Akhir
             </Heading>
-            <span style={{ fontSize: "20px", color: "white" }}>&#9670;</span>
+            <span style={{ fontSize: "1vw", color: "white" }}>&#9670;</span>
           </HStack>
         </Box>
         <br />
@@ -125,7 +125,7 @@ function NilaiAkhir({
                   borderTopRadius={"10px"}
                   color={"#E7D7C5"}
                 >
-                  <Heading fontSize={"40px"}>Score</Heading>
+                  <Heading fontSize={"2vw"}>Score</Heading>
                 </Center>
                 <Center
                   height={"70%"}
@@ -133,7 +133,7 @@ function NilaiAkhir({
                   width={"100%"}
                   borderBottomRadius={"10px"}
                 >
-                  <Heading fontSize={"100px"}>
+                  <Heading fontSize={"6vw"}>
                     {userData.dataLogin.Stage2Score?.Value}
                   </Heading>
                 </Center>
@@ -153,7 +153,7 @@ function NilaiAkhir({
                         <Td
                           textAlign={"center"}
                           borderRight={"3px solid #BE9771"}
-                          fontSize={"25px"}
+                          fontSize={"1.2vw"}
                           fontWeight={"bold"}
                         >
                           1
@@ -162,7 +162,7 @@ function NilaiAkhir({
                           textAlign={"center"}
                           border={"3px solid #BE9771"}
                           borderTop={"transparent"}
-                          fontSize={"25px"}
+                          fontSize={"1.2vw"}
                           fontWeight={"bold"}
                         >
                           2
@@ -170,18 +170,18 @@ function NilaiAkhir({
                         <Td
                           textAlign={"center"}
                           borderLeft={"3px solid #BE9771"}
-                          fontSize={"25px"}
+                          fontSize={"1.2vw"}
                           fontWeight={"bold"}
                         >
                           3
                         </Td>
                       </Tr>
-                      <Tr height={"60px"}>
+                      <Tr height={"7vh"}>
                         <Td
                           textAlign={"center"}
                           border={"3px solid #BE9771"}
                           borderLeft={"transparent"}
-                          fontSize={"26px"}
+                          fontSize={"1.3vw"}
                           fontWeight={"bold"}
                         >
                           22/22
@@ -189,7 +189,7 @@ function NilaiAkhir({
                         <Td
                           textAlign={"center"}
                           border={"3px solid #BE9771"}
-                          fontSize={"26px"}
+                          fontSize={"1.3vw"}
                           fontWeight={"bold"}
                         >
                           22/22
@@ -198,7 +198,7 @@ function NilaiAkhir({
                           textAlign={"center"}
                           border={"3px solid #BE9771"}
                           borderRight={"transparent"}
-                          fontSize={"26px"}
+                          fontSize={"1.3vw"}
                           fontWeight={"bold"}
                         >
                           22/22
@@ -209,7 +209,7 @@ function NilaiAkhir({
                           textAlign={"center"}
                           border={"3px solid #BE9771"}
                           borderLeft={"transparent"}
-                          fontSize={"25px"}
+                          fontSize={"1.2vw"}
                           fontWeight={"bold"}
                         >
                           4
@@ -217,7 +217,7 @@ function NilaiAkhir({
                         <Td
                           textAlign={"center"}
                           border={"3px solid #BE9771"}
-                          fontSize={"25px"}
+                          fontSize={"1.2vw"}
                           fontWeight={"bold"}
                         >
                           5
@@ -226,18 +226,18 @@ function NilaiAkhir({
                           textAlign={"center"}
                           border={"3px solid #BE9771"}
                           borderRight={"transparent"}
-                          fontSize={"25px"}
+                          fontSize={"1.2vw"}
                           fontWeight={"bold"}
                         >
                           6
                         </Td>
                       </Tr>
-                      <Tr height={"60px"}>
+                      <Tr height={"7vh"}>
                         <Td
                           textAlign={"center"}
                           borderColor={"transparent"}
                           borderRight={"3px solid #BE9771"}
-                          fontSize={"26px"}
+                          fontSize={"1.3vw"}
                           fontWeight={"bold"}
                         >
                           22/22
@@ -245,7 +245,7 @@ function NilaiAkhir({
                         <Td
                           textAlign={"center"}
                           borderColor={"transparent"}
-                          fontSize={"26px"}
+                          fontSize={"1.3vw"}
                           fontWeight={"bold"}
                         >
                           22/22
@@ -254,7 +254,7 @@ function NilaiAkhir({
                           textAlign={"center"}
                           borderColor={"transparent"}
                           borderLeft={"3px solid #BE9771"}
-                          fontSize={"26px"}
+                          fontSize={"1.3vw"}
                           fontWeight={"bold"}
                         >
                           22/22

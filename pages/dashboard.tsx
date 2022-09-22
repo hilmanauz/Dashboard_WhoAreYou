@@ -41,7 +41,7 @@ function Dashboard(
         color={"#BE9770"}
         boxShadow={"0 9px 0 0 rgb(0 0 0 / 15%), 0 0 9px 0 rgb(0 0 0 / 14%)"}
       >
-        <Heading fontSize={"40px"}>Dashboard Information</Heading>
+        <Heading fontSize={"2.35vw"}>Dashboard Information</Heading>
       </Center>
       <Grid
         paddingTop={"50px"}

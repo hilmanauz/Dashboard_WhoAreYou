@@ -73,11 +73,11 @@ function Profile({
             bgColor={"#BE9770"}
             boxShadow={"0 5px 0 0 rgb(0 0 0 / 15%), 0 0 5px 0 rgb(0 0 0 / 14%)"}
           >
-            <span style={{ fontSize: "20px", color: "white" }}>&#9670;</span>
-            <Heading color={"white"} paddingInline={"20px"} fontSize={"36px"}>
+            <span style={{ fontSize: "1vw", color: "white" }}>&#9670;</span>
+            <Heading color={"white"} paddingInline={"20px"} fontSize={"1.8vw"}>
               Profile
             </Heading>
-            <span style={{ fontSize: "20px", color: "white" }}>&#9670;</span>
+            <span style={{ fontSize: "1vw", color: "white" }}>&#9670;</span>
           </HStack>
         </Box>
         <HStack gap={8} height={"100%"} width={"100%"}>
@@ -98,7 +98,7 @@ function Profile({
               borderRadius={"15px"}
               _hover={{ bgColor: "#E7D7C5" }}
               color={"white"}
-              fontSize={"22px"}
+              fontSize={"1.3vw"}
               boxShadow={
                 "0 3px 0 0 rgb(0 0 0 / 15%), 0 0 3px 0 rgb(0 0 0 / 14%)"
               }
@@ -124,12 +124,12 @@ function Profile({
                       color={"#C5A27F"}
                     >
                       <HStack>
-                        <Text>Nama</Text>
+                        <Text fontSize={"0.7vw"}>Nama</Text>
                         <Spacer />
                         <Text>:</Text>
                       </HStack>
                     </Th>
-                    <Td fontSize={"18px"}>
+                    <Td fontSize={"0.9vw"}>
                       {userData.dataLogin.PlayerName.Value || "-"}
                     </Td>
                   </Tr>
@@ -140,12 +140,12 @@ function Profile({
                       color={"#C5A27F"}
                     >
                       <HStack>
-                        <Text>Umur</Text>
+                        <Text fontSize={"0.7vw"}>Umur</Text>
                         <Spacer />
                         <Text>:</Text>
                       </HStack>
                     </Th>
-                    <Td fontSize={"18px"}>
+                    <Td fontSize={"0.9vw"}>
                       {userData.dataLogin.PlayerAge.Value || "-"}
                     </Td>
                   </Tr>
@@ -156,12 +156,12 @@ function Profile({
                       color={"#C5A27F"}
                     >
                       <HStack>
-                        <Text>Jenis Kelamin</Text>
+                        <Text fontSize={"0.7vw"}>Jenis Kelamin</Text>
                         <Spacer />
                         <Text>:</Text>
                       </HStack>
                     </Th>
-                    <Td fontSize={"18px"}>
+                    <Td fontSize={"0.9vw"}>
                       {userData.dataLogin.PlayerGender?.Value || "-"}
                     </Td>
                   </Tr>
@@ -172,12 +172,12 @@ function Profile({
                       color={"#C5A27F"}
                     >
                       <HStack>
-                        <Text>Institusi</Text>
+                        <Text fontSize={"0.7vw"}>Institusi</Text>
                         <Spacer />
                         <Text>:</Text>
                       </HStack>
                     </Th>
-                    <Td fontSize={"18px"}>
+                    <Td fontSize={"0.9vw"}>
                       {userData.dataLogin.PlayerInstitution?.Value || "-"}
                     </Td>
                   </Tr>
@@ -188,12 +188,12 @@ function Profile({
                       color={"#C5A27F"}
                     >
                       <HStack>
-                        <Text>Kota</Text>
+                        <Text fontSize={"0.7vw"}>Kota</Text>
                         <Spacer />
                         <Text>:</Text>
                       </HStack>
                     </Th>
-                    <Td fontSize={"18px"}>
+                    <Td fontSize={"0.9vw"}>
                       {userData.dataLogin.PlayerCity?.Value || "-"}
                     </Td>
                   </Tr>
@@ -204,12 +204,12 @@ function Profile({
                       color={"#C5A27F"}
                     >
                       <HStack>
-                        <Text>NIP</Text>
+                        <Text fontSize={"0.7vw"}>NIP</Text>
                         <Spacer />
                         <Text>:</Text>
                       </HStack>
                     </Th>
-                    <Td fontSize={"18px"}>
+                    <Td fontSize={"0.9vw"}>
                       {userData.dataLogin.PlayerNip?.Value || "-"}
                     </Td>
                   </Tr>
