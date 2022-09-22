@@ -73,7 +73,7 @@ export default function useClient() {
         {},
         {
           headers: {
-            "X-SecretKey": "OYXXE6SJIFJYS9O8ZU8BWF1RYEC545FNBDRGS6FMNJJQWIGKPA",
+            "X-SecretKey": "KG16NC67SOIJ3ZY641IAZ5Y8GCDQZPCMCTTO1637GWUDS8PO59",
           }
         }
       );
