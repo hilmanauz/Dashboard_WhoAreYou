@@ -680,7 +680,7 @@ function LandingPage() {
                 <Center
                   position={"absolute"}
                   bottom={0}
-                  height={{ lg: "700px", md: "550px", sm: "500px" }}
+                  height={{ lg: "800px", md: "650px", sm: "500px" }}
                   width={"full"}
                   backgroundSize={"cover"}
                   backgroundImage={"./footer.png"}
