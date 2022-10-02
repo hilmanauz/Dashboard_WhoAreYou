@@ -12,7 +12,7 @@ import { deleteCookie, setCookie } from "cookies-next";
 import React from "react";
 import { useForm } from "react-hook-form";
 import useClient from "../engines/useClient";
-import { LoginForm } from "./SignModal";
+import { fontSize, LoginForm } from "./SignModal";
 
 function LoginPage({
   modalDisclosure,
@@ -128,7 +128,7 @@ function LoginPage({
             </Button>
           </VStack>
         </form>
-        <Text color={"#815230"} letterSpacing={"0.4px"}>
+        <Text color={"#815230"} letterSpacing={"0.4px"} size={fontSize}>
           By signing up, you are agree to our communication and usage terms.{" "}
           {`Don't`} have accounts?{" "}
           <Link onClick={handleMoveToRegisterPage} color={"green.500"}>

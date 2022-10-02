@@ -62,7 +62,7 @@ function CustomSelect({
         backgroundColor: "#E7D7C5",
         borderColor: state.menuIsOpen ? "#969382" : "transparent",
         outline: state.menuIsOpen ? "1px solid #969382" : "transparent",
-        minHeight: "3rem",
+        minHeight: "1rem",
         borderRadius: "0.375rem",
       }),
       placeholder: (base) => ({

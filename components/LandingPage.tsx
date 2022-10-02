@@ -16,6 +16,7 @@ import {
   GridItem,
   useDisclosure,
   Button,
+  Stack,
 } from "@chakra-ui/react";
 import React from "react";
 import Scrollbars from "rc-scrollbars";
@@ -25,6 +26,20 @@ import SignModal from "./SignModal";
 import Router from "next/router";
 import { getCookie } from "cookies-next";
 import useClient from "../engines/useClient";
+
+const paddingContainer = { lg: "300px", md: "150px", sm: "100px" };
+
+const widthContainer = { md: "2xl", lg: "80vw" };
+
+export const size = { lg: "lg", md: "md", sm: "sm" };
+
+const imageSize = { lg: "220px", md: "170px", sm: "120px" };
+
+const topTitle = { md: -14, lg: -16, sm: -12 };
+
+const paddingTitle = { lg: "30px 150px", sm: "20px 30px", md: "30px 120px" };
+
+const paddingContent = { lg: "150px", md: "100px", sm: "80px" };
 
 function LandingPage() {
   const loginDisclosure = useDisclosure();
@@ -62,10 +77,10 @@ function LandingPage() {
                     src={"Account_Button.png"}
                     alt={"Account_Button"}
                     cursor={"pointer"}
-                    width={"125px"}
+                    width={{ lg: "125px", md: "110px", sm: "90px" }}
                   />
                 </Box>
-                <Box width={"750px"}>
+                <Box width={{ lg: "750px", md: "500px", sm: "300px" }}>
                   <Image src={"./Logo.png"} alt={"logo"} objectFit={"cover"} />
                 </Box>
                 {!!(
@@ -204,19 +219,19 @@ function LandingPage() {
                 )}
               </Center>
               <VStack
-                fontSize={"30px"}
                 backgroundImage={"./Background.png"}
                 backgroundSize={"contain"}
                 position={"relative"}
                 width={"full"}
                 marginTop={"-20px !important"}
-                paddingY={"300px"}
-                spacing={"200px"}
+                paddingY={paddingContainer}
+                spacing={{ lg: "200px", md: "150px", sm: "100px" }}
                 textAlign={"center"}
               >
-                <Container maxW="80vw">
+                <Container maxW={widthContainer}>
                   <Center
-                    height={"80vh"}
+                    width={"full"}
+                    height={{ lg: "80vh", md: "45vh", sm: "40vh" }}
                     borderRadius={"30px"}
                     bgColor={"#f9f3ea"}
                     boxShadow={
@@ -235,7 +250,6 @@ function LandingPage() {
                       allowFullScreen
                     />
                   </Center>
-                  <Box height={"100px"} />
                 </Container>
                 <Box
                   width={"full"}
@@ -244,11 +258,11 @@ function LandingPage() {
                     "0 20px 0 0 rgb(0 0 0 / 15%), 0 0 20px 0 rgb(0 0 0 / 14%)"
                   }
                   position={"relative"}
-                  paddingY={"150px"}
+                  paddingY={paddingContent}
                 >
                   <Box
                     position={"absolute"}
-                    top={{ md: -5, lg: -16 }}
+                    top={topTitle}
                     left={0}
                     right={0}
                     textAlign={"center"}
@@ -258,40 +272,39 @@ function LandingPage() {
                       marginLeft={"auto"}
                       marginRight={"auto"}
                       borderRadius={"16px"}
-                      paddingY={"30px"}
-                      paddingX={"150px"}
+                      padding={{ ...paddingTitle, sm: "20px 70px" }}
                       bgColor={"#BE9770"}
                       boxShadow={
                         "0 8px 0 0 rgb(0 0 0 / 15%), 0 0 8px 0 rgb(0 0 0 / 14%)"
                       }
                     >
-                      <span style={{ fontSize: "25px", color: "white" }}>
+                      <Text size={size} color={"white"}>
                         &#9670;
-                      </span>
+                      </Text>
                       <Heading
                         color={"white"}
                         paddingInline={"2vw"}
-                        fontSize={{ base: "1.5vw", md: "2.2vw", lg: "2.2vw" }}
+                        size={size}
                       >
                         About
                       </Heading>
-                      <span style={{ fontSize: "25px", color: "white" }}>
+                      <Text size={size} color={"white"}>
                         &#9670;
-                      </span>
+                      </Text>
                     </HStack>
                   </Box>
                   <Center width={"full"} alignSelf={"center"}>
                     <Container
-                      maxW="75vw"
+                      maxW={widthContainer}
                       fontWeight={"extrabold"}
                       color={"#865A3A"}
                     >
-                      <Text>
+                      <Text size={size}>
                         The first DISC assessment game and sensing perception
                         gap training in Indonesia
                       </Text>
                       <br />
-                      <Text>
+                      <Text size={size}>
                         Who are you adalah permainan yang menggabungkan alat
                         penilaian serta penginderaan dan pelaksanaan pelatihan.
                         Who Are You akan menjadi pelatihan kepemimpinan praktis
@@ -308,12 +321,12 @@ function LandingPage() {
                   boxShadow={
                     "0 20px 0 0 rgb(0 0 0 / 15%), 0 0 20px 0 rgb(0 0 0 / 14%)"
                   }
-                  paddingY={"200px"}
+                  paddingY={paddingContent}
                   position={"relative"}
                 >
                   <Box
                     position={"absolute"}
-                    top={{ md: -5, lg: -16 }}
+                    top={topTitle}
                     left={0}
                     right={0}
                     textAlign={"center"}
@@ -323,29 +336,28 @@ function LandingPage() {
                       marginLeft={"auto"}
                       marginRight={"auto"}
                       borderRadius={"16px"}
-                      paddingY={"30px"}
-                      paddingX={"150px"}
+                      padding={paddingTitle}
                       bgColor={"#BE9770"}
                       boxShadow={
                         "0 8px 0 0 rgb(0 0 0 / 15%), 0 0 8px 0 rgb(0 0 0 / 14%)"
                       }
                     >
-                      <span style={{ fontSize: "25px", color: "white" }}>
+                      <Text size={size} color={"white"}>
                         &#9670;
-                      </span>
+                      </Text>
                       <Heading
                         color={"white"}
                         paddingInline={"2vw"}
-                        fontSize={{ base: "1.5vw", md: "2.2vw", lg: "2.2vw" }}
+                        size={size}
                       >
                         What is DISC ?
                       </Heading>
-                      <span style={{ fontSize: "25px", color: "white" }}>
+                      <Text size={size} color={"white"}>
                         &#9670;
-                      </span>
+                      </Text>
                     </HStack>
                   </Box>
-                  <Container maxW="75vw" fontSize={"30px"}>
+                  <Container maxW={widthContainer}>
                     <VStack gap={"50px"} alignItems={"normal"}>
                       <Grid templateColumns="repeat(3, 1fr)" gap={10}>
                         <GridItem colSpan={1}>
@@ -355,28 +367,44 @@ function LandingPage() {
                         </GridItem>
                         <GridItem colSpan={2}>
                           <VStack alignItems={"flex-start"}>
-                            <Text>
+                            <Text size={size}>
                               <b>(D)ominance</b> cenderung untuk:
                             </Text>
                             <List spacing={2} textAlign={"left"}>
                               <ListItem>
-                                <ListIcon as={BiMinus} color="green.500" />
-                                Mengambil keputusan dengan cepat, malah kadang
-                                kecepetan
+                                <HStack>
+                                  <ListIcon as={BiMinus} color="green.500" />
+                                  <Text size={size}>
+                                    Mengambil keputusan dengan cepat, malah
+                                    kadang kecepetan
+                                  </Text>
+                                </HStack>
                               </ListItem>
                               <ListItem>
-                                <ListIcon as={BiMinus} color="green.500" />
-                                Senang mendapatkan tantangan, tapi keasikan
-                                sendiri
+                                <HStack>
+                                  <ListIcon as={BiMinus} color="green.500" />
+                                  <Text size={size}>
+                                    Senang mendapatkan tantangan, tapi keasikan
+                                    sendiri
+                                  </Text>
+                                </HStack>
                               </ListItem>
                               <ListItem>
-                                <ListIcon as={BiMinus} color="green.500" />
-                                Senang menunjukan kelebihan anda, sampe orang
-                                lain bete
+                                <HStack>
+                                  <ListIcon as={BiMinus} color="green.500" />
+                                  <Text size={size}>
+                                    Senang menunjukan kelebihan anda, sampe
+                                    orang lain bete
+                                  </Text>
+                                </HStack>
                               </ListItem>
                               <ListItem>
-                                <ListIcon as={BiMinus} color="green.500" />
-                                Jago debat, Gak ada kata kalah di kamus
+                                <HStack>
+                                  <ListIcon as={BiMinus} color="green.500" />
+                                  <Text size={size}>
+                                    Jago debat, Gak ada kata kalah di kamus
+                                  </Text>
+                                </HStack>
                               </ListItem>
                             </List>
                           </VStack>
@@ -388,25 +416,41 @@ function LandingPage() {
                         </GridItem>
                         <GridItem colSpan={2}>
                           <VStack alignItems={"flex-start"}>
-                            <Text>
+                            <Text size={size}>
                               <b>(i)nfluence</b> cenderung untuk:
                             </Text>
                             <List spacing={2} textAlign={"left"}>
                               <ListItem>
-                                <ListIcon as={BiMinus} color="green.500" />
-                                Terbuka akan segala kemungkinan
+                                <HStack>
+                                  <ListIcon as={BiMinus} color="green.500" />
+                                  <Text size={size}>
+                                    Terbuka akan segala kemungkinan
+                                  </Text>
+                                </HStack>
                               </ListItem>
                               <ListItem>
-                                <ListIcon as={BiMinus} color="green.500" />
-                                Kurang detail dalam mengerjakan sesuatu
+                                <HStack>
+                                  <ListIcon as={BiMinus} color="green.500" />
+                                  <Text size={size}>
+                                    Kurang detail dalam mengerjakan sesuatu
+                                  </Text>
+                                </HStack>
                               </ListItem>
                               <ListItem>
-                                <ListIcon as={BiMinus} color="green.500" />
-                                Senang apabila bisa mempengaruhi orang lain
+                                <HStack>
+                                  <ListIcon as={BiMinus} color="green.500" />
+                                  <Text size={size}>
+                                    Senang apabila bisa mempengaruhi orang lain
+                                  </Text>
+                                </HStack>
                               </ListItem>
                               <ListItem>
-                                <ListIcon as={BiMinus} color="green.500" />
-                                mudah kecewa apabila menerima penolakan
+                                <HStack>
+                                  <ListIcon as={BiMinus} color="green.500" />
+                                  <Text size={size}>
+                                    mudah kecewa apabila menerima penolakan
+                                  </Text>
+                                </HStack>
                               </ListItem>
                             </List>
                           </VStack>
@@ -418,25 +462,37 @@ function LandingPage() {
                         </GridItem>
                         <GridItem colSpan={2}>
                           <VStack alignItems={"flex-start"}>
-                            <Text>
+                            <Text size={size}>
                               <b>(S)teadiness</b> cenderung untuk:
                             </Text>
                             <List spacing={2} textAlign={"left"}>
                               <ListItem>
-                                <ListIcon as={BiMinus} color="green.500" />
-                                Menjadi pendengar yang baik
+                                <HStack>
+                                  <ListIcon as={BiMinus} color="green.500" />
+                                  <Text size={size}>
+                                    Menjadi pendengar yang baik
+                                  </Text>
+                                </HStack>
                               </ListItem>
                               <ListItem>
-                                <ListIcon as={BiMinus} color="green.500" />
-                                Pekerja tim yang baik
+                                <HStack>
+                                  <ListIcon as={BiMinus} color="green.500" />
+                                  <Text size={size}>Pekerja tim yang baik</Text>
+                                </HStack>
                               </ListItem>
                               <ListItem>
-                                <ListIcon as={BiMinus} color="green.500" />
-                                Sensitif
+                                <HStack>
+                                  <ListIcon as={BiMinus} color="green.500" />
+                                  <Text size={size}>Sensitif</Text>
+                                </HStack>
                               </ListItem>
                               <ListItem>
-                                <ListIcon as={BiMinus} color="green.500" />
-                                Senang dengan kestabilan
+                                <HStack>
+                                  <ListIcon as={BiMinus} color="green.500" />
+                                  <Text size={size}>
+                                    Senang dengan kestabilan
+                                  </Text>
+                                </HStack>
                               </ListItem>
                             </List>
                           </VStack>
@@ -448,25 +504,39 @@ function LandingPage() {
                         </GridItem>
                         <GridItem colSpan={2}>
                           <VStack alignItems={"flex-start"}>
-                            <Text>
+                            <Text size={size}>
                               <b>(C)onscientiousness</b> cenderung untuk:
                             </Text>
                             <List spacing={2} textAlign={"left"}>
                               <ListItem>
-                                <ListIcon as={BiMinus} color="green.500" />
-                                Senang dengan sesuatu yang terstruktur
+                                <HStack>
+                                  <ListIcon as={BiMinus} color="green.500" />
+                                  <Text size={size}>
+                                    Senang dengan sesuatu yang terstruktur
+                                  </Text>
+                                </HStack>
                               </ListItem>
                               <ListItem>
-                                <ListIcon as={BiMinus} color="green.500" />
-                                terlihat pefeksionis
+                                <HStack>
+                                  <ListIcon as={BiMinus} color="green.500" />
+                                  <Text size={size}>terlihat pefeksionis</Text>
+                                </HStack>
                               </ListItem>
                               <ListItem>
-                                <ListIcon as={BiMinus} color="green.500" />
-                                Tidak menyukai sesuatu yang tidak jelas
+                                <HStack>
+                                  <ListIcon as={BiMinus} color="green.500" />
+                                  <Text size={size}>
+                                    Tidak menyukai sesuatu yang tidak jelas
+                                  </Text>
+                                </HStack>
                               </ListItem>
                               <ListItem>
-                                <ListIcon as={BiMinus} color="green.500" />
-                                Mengerjakan segala sesuatu nya sendiri
+                                <HStack>
+                                  <ListIcon as={BiMinus} color="green.500" />
+                                  <Text size={size}>
+                                    Mengerjakan segala sesuatu nya sendiri
+                                  </Text>
+                                </HStack>
                               </ListItem>
                             </List>
                           </VStack>
@@ -482,11 +552,11 @@ function LandingPage() {
                     "0 20px 0 0 rgb(0 0 0 / 15%), 0 0 20px 0 rgb(0 0 0 / 14%)"
                   }
                   position={"relative"}
-                  paddingY={"150px"}
+                  paddingY={{ lg: "150px", md: "100px", sm: "80px" }}
                 >
                   <Box
                     position={"absolute"}
-                    top={{ md: -5, lg: -16 }}
+                    top={topTitle}
                     left={0}
                     right={0}
                     textAlign={"center"}
@@ -496,115 +566,186 @@ function LandingPage() {
                       marginLeft={"auto"}
                       marginRight={"auto"}
                       borderRadius={"16px"}
-                      paddingY={"30px"}
-                      paddingX={"150px"}
+                      padding={paddingTitle}
                       bgColor={"#BE9770"}
                       boxShadow={
                         "0 8px 0 0 rgb(0 0 0 / 15%), 0 0 8px 0 rgb(0 0 0 / 14%)"
                       }
                     >
-                      <span style={{ fontSize: "25px", color: "white" }}>
+                      <Text size={size} color={"white"}>
                         &#9670;
-                      </span>
+                      </Text>
                       <Heading
                         color={"white"}
                         paddingInline={"2vw"}
-                        fontSize={{ base: "1.5vw", md: "2.2vw", lg: "2.2vw" }}
+                        size={size}
                       >
                         System Requirements
                       </Heading>
-                      <span style={{ fontSize: "25px", color: "white" }}>
+                      <Text size={size} color={"white"}>
                         &#9670;
-                      </span>
+                      </Text>
                     </HStack>
                   </Box>
-                  <Container maxW="80vw">
+                  <Container maxW={widthContainer}>
                     <Center>
-                      <VStack alignItems={"start"}>
-                        <Text color={"transparent"}>_</Text>
-                        <Text>CPU:</Text>
-                        <Text>OS:</Text>
-                        <Text>RAM:</Text>
-                        <Text>Resolution:</Text>
-                        <Text>Browser:</Text>
-                        <Text>Network:</Text>
-                      </VStack>
-                      <VStack>
-                        <Heading>Mobile</Heading>
-                        <Text>Qualcomm® Snapdragon™ 662</Text>
-                        <Text>Android 10</Text>
-                        <Text>6 GB</Text>
-                        <Text>1080x2340 {`(${6.53}")`}</Text>
-                        <Text>Updated Browser</Text>
-                        <Text>8 mbps</Text>
-                      </VStack>
-                      <Box width={"50px"}></Box>
-                      <VStack>
-                        <Heading>Desktop</Heading>
-                        <Text>i3</Text>
-                        <Text>Windows, linux, MacOS</Text>
-                        <Text>6 GB</Text>
-                        <Text>1280x1024</Text>
-                        <Text>Updated Browser</Text>
-                        <Text>8 mbps</Text>
+                      <VStack width={"full"}>
+                        <HStack width={"full"}>
+                          <Box width={"30%"} />
+                          <Heading size={{ ...size, sm: "xs" }} width={"35%"}>
+                            Mobile
+                          </Heading>
+                          <Heading size={{ ...size, sm: "xs" }} width={"35%"}>
+                            Desktop
+                          </Heading>
+                        </HStack>
+                        <HStack width={"full"}>
+                          <Text size={size} width={"30%"}>
+                            CPU:
+                          </Text>
+                          <Text size={size} width={"35%"}>
+                            Qualcomm® Snapdragon™ 662
+                          </Text>
+                          <Text size={size} width={"35%"}>
+                            i3
+                          </Text>
+                        </HStack>
+                        <HStack width={"full"}>
+                          <Text size={size} width={"30%"}>
+                            OS:
+                          </Text>
+                          <Text size={size} width={"35%"}>
+                            Android 10
+                          </Text>
+                          <Text size={size} width={"35%"}>
+                            Windows, linux, MacOS
+                          </Text>
+                        </HStack>
+                        <HStack width={"full"}>
+                          <Text size={size} width={"30%"}>
+                            RAM:
+                          </Text>
+                          <Text size={size} width={"35%"}>
+                            6 GB
+                          </Text>
+                          <Text size={size} width={"35%"}>
+                            6 GB
+                          </Text>
+                        </HStack>
+                        <HStack width={"full"}>
+                          <Text size={size} width={"30%"}>
+                            Resolution:
+                          </Text>
+                          <Text size={size} width={"35%"}>
+                            1080x2340 {`(${6.53}")`}
+                          </Text>
+                          <Text size={size} width={"35%"}>
+                            1280x1024
+                          </Text>
+                        </HStack>
+                        <HStack width={"full"}>
+                          <Text size={size} width={"30%"}>
+                            Browser:
+                          </Text>
+                          <Text size={size} width={"35%"}>
+                            Updated Browser
+                          </Text>
+                          <Text size={size} width={"35%"}>
+                            Updated Browser
+                          </Text>
+                        </HStack>
+                        <HStack width={"full"}>
+                          <Text size={size} width={"30%"}>
+                            Network:
+                          </Text>
+                          <Text size={size} width={"35%"}>
+                            8 mbps
+                          </Text>
+                          <Text size={size} width={"35%"}>
+                            8 mbps
+                          </Text>
+                        </HStack>
                       </VStack>
                     </Center>
                   </Container>
                 </Box>
+                <Box height={{ lg: "400px", sm: "400px", md: "550px" }} />
+                <Center
+                  position={"absolute"}
+                  bottom={0}
+                  height={"70vh"}
+                  width={"full"}
+                  backgroundSize={"cover"}
+                  backgroundImage={"./footer.png"}
+                  color={"white"}
+                  paddingTop={{ lg: "200px", md: "150px", sm: "100px" }}
+                >
+                  <Container maxW={widthContainer} height={"full"}>
+                    <VStack
+                      height={"full"}
+                      flexDirection={"column"}
+                      justifyContent={"center"}
+                    >
+                      <Grid templateColumns="repeat(3, 1fr)" gap={6}>
+                        <GridItem w="100%">
+                          <VStack
+                            alignItems={"flex-start"}
+                            textAlign={"start"}
+                            spacing={"30px"}
+                          >
+                            <VStack alignItems={"inherit"}>
+                              <Heading size={size}>Say Hello</Heading>
+                              <Text size={size}>Contact@everidea.id</Text>
+                            </VStack>
+                            <VStack alignItems={"inherit"}>
+                              <Heading size={size}>Stop by</Heading>
+                              <Text size={size}>
+                                Jalan Karang Tinggal No.31 Bandung, Jawa Barat
+                                40162
+                              </Text>
+                            </VStack>
+                          </VStack>
+                        </GridItem>
+                        <GridItem w="100%">
+                          <VStack>
+                            <Heading size={size}>Get Social</Heading>
+                            <Text size={size}>Instagram</Text>
+                            <Text size={size}>Linkedin</Text>
+                            <Text size={size}>Youtube</Text>
+                            <Text size={size}>Medium</Text>
+                          </VStack>
+                        </GridItem>
+                        <GridItem w="100%">
+                          <VStack spacing={"20px"}>
+                            <Image
+                              width={"200px"}
+                              src={"./Logo_EI.png"}
+                              alt={"Logo_EI"}
+                            />
+                            <Image
+                              width={"200px"}
+                              src={"./Logo_Edu.png"}
+                              alt={"Logo_Edu"}
+                            />
+                          </VStack>
+                        </GridItem>
+                      </Grid>
+                      <Center
+                        height={{ lg: "75px", md: "50px", sm: "50px" }}
+                        position={"absolute"}
+                        bottom={0}
+                      >
+                        <Heading
+                          fontSize={{ lg: "20px", md: "15px", sm: "15px" }}
+                          textAlign={"center"}
+                        >
+                          &copy; Everidea All Right Reserved
+                        </Heading>
+                      </Center>
+                    </VStack>
+                  </Container>
+                </Center>
               </VStack>
-              <Center
-                position={"relative"}
-                marginTop={"-250px !important"}
-                height={"70vh"}
-                width={"full"}
-                backgroundSize={"cover"}
-                backgroundImage={"./footer.png"}
-                color={"white"}
-                paddingTop={"200px"}
-                fontSize={"20px"}
-              >
-                <Container maxW="70vw">
-                  <Grid templateColumns="repeat(3, 1fr)" gap={6}>
-                    <GridItem w="100%">
-                      <VStack alignItems={"flex-start"} spacing={"30px"}>
-                        <VStack alignItems={"inherit"}>
-                          <Heading>Say Hello</Heading>
-                          <Text>Contact@everidea.id</Text>
-                        </VStack>
-                        <VStack alignItems={"inherit"}>
-                          <Heading>Stop by</Heading>
-                          <Text>
-                            Jalan Karang Tinggal No.31 Bandung, Jawa Barat 40162
-                          </Text>
-                        </VStack>
-                      </VStack>
-                    </GridItem>
-                    <GridItem w="100%">
-                      <VStack>
-                        <Heading>Get Social</Heading>
-                        <Text>Instagram</Text>
-                        <Text>Linkedin</Text>
-                        <Text>Youtube</Text>
-                        <Text>Medium</Text>
-                      </VStack>
-                    </GridItem>
-                    <GridItem w="100%">
-                      <VStack spacing={"20px"}>
-                        <Image
-                          width={"200px"}
-                          src={"./Logo_EI.png"}
-                          alt={"Logo_EI"}
-                        />
-                        <Image
-                          width={"200px"}
-                          src={"./Logo_Edu.png"}
-                          alt={"Logo_Edu"}
-                        />
-                      </VStack>
-                    </GridItem>
-                  </Grid>
-                </Container>
-              </Center>
             </VStack>
           </Box>
         </Scrollbars>

@@ -30,7 +30,32 @@ const theme = extendTheme({
       },
       sizes: {
         lg: {
-          letterSpacing: "0.5px",
+          fontSize: "40px",
+        },
+        md: {
+          fontSize: "30px",
+        },
+        sm: {
+          fontSize: "23px",
+        },
+        xs: {
+          fontSize: "20px",
+        },
+      },
+      defaultProps: {
+        size: "lg",
+      },
+    },
+    Text: {
+      sizes: {
+        lg: {
+          fontSize: "24px",
+        },
+        md: {
+          fontSize: "18px",
+        },
+        sm: {
+          fontSize: "14px",
         },
       },
       defaultProps: {
@@ -38,6 +63,17 @@ const theme = extendTheme({
       },
     },
     FormLabel: {
+      sizes: {
+        lg: {
+          fontSize: "24px",
+        },
+        md: {
+          fontSize: "20px",
+        },
+        sm: {
+          fontSize: "14px",
+        },
+      },
       baseStyle: {
         fontFamily: "calibrib",
         letterSpacing: "0.5px",

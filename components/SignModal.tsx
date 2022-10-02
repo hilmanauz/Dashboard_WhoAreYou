@@ -39,6 +39,8 @@ export type RegisterForm = {
   confirmPassword: string;
 };
 
+export const fontSize = { lg: "md", md: "sm", sm: "xs" };
+
 function LoginModal({
   modalDisclosure,
 }: {
@@ -64,7 +66,7 @@ function LoginModal({
       >
         <Box
           position={"absolute"}
-          top={{ md: -5, lg: "-25px" }}
+          top={{ md: -5, lg: "-25px", sm: -5 }}
           left={0}
           right={0}
           textAlign={"center"}
@@ -79,14 +81,22 @@ function LoginModal({
             bgColor={"#BE9770"}
             boxShadow={"0 8px 0 0 rgb(0 0 0 / 15%), 0 0 8px 0 rgb(0 0 0 / 14%)"}
           >
-            <span style={{ color: "white" }}>&#9670;</span>
-            <Heading color={"white"} paddingInline={"2vw"}>
+            <Text size={fontSize} style={{ color: "white" }}>
+              &#9670;
+            </Text>
+            <Heading color={"white"} paddingInline={"2vw"} size={fontSize}>
               {signUpDisclosure.isOpen ? "Register" : "Sign in"}
             </Heading>
-            <span style={{ color: "white" }}>&#9670;</span>
+            <Text size={fontSize} style={{ color: "white" }}>
+              &#9670;
+            </Text>
           </HStack>
         </Box>
-        <ModalBody paddingX={"70px"} paddingTop={"70px"} paddingBottom={"50px"}>
+        <ModalBody
+          paddingX={{ lg: "70px", md: "60px", sm: "40px" }}
+          paddingTop={"70px"}
+          paddingBottom={"50px"}
+        >
           {signUpDisclosure.isOpen ? (
             <RegisterPage registerDisclosure={signUpDisclosure} />
           ) : (

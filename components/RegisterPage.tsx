@@ -21,6 +21,8 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import useClient from "../engines/useClient";
 import CustomSelect, { SelectOption } from "./CustomSelect";
+import { size } from "./LandingPage";
+import { fontSize } from "./SignModal";
 
 export type FormDefinition = {
   umur: number | null;
@@ -142,7 +144,7 @@ function RegisterPage({
     <VStack spacing={"30px"} alignItems={"normal"}>
       <form onSubmit={formRef.handleSubmit(onSubmit)}>
         <SlideFade in={true} offsetX="20px" offsetY={0}>
-          <VStack width={"inherit"} spacing={7}>
+          <VStack width={"inherit"} spacing={{ lg: 7, md: 6, sm: 5 }}>
             <FormControl>
               <Input
                 placeholder="Nama Lengkap"
@@ -153,7 +155,7 @@ function RegisterPage({
                   boxShadow: "0 0 0 1px #969382",
                 }}
                 color={"#8C603D"}
-                size={"lg"}
+                size={size}
                 {...formRef.register("nama")}
               />
             </FormControl>
@@ -168,7 +170,7 @@ function RegisterPage({
                     boxShadow: "0 0 0 1px #969382",
                   }}
                   color={"#8C603D"}
-                  size={"lg"}
+                  size={size}
                   type={"number"}
                   onKeyDown={handleKeyDown}
                   {...formRef.register("umur")}
@@ -200,7 +202,7 @@ function RegisterPage({
                   boxShadow: "0 0 0 1px #969382",
                 }}
                 color={"#8C603D"}
-                size={"lg"}
+                size={size}
                 {...formRef.register("institusi")}
               />
             </FormControl>
@@ -214,7 +216,7 @@ function RegisterPage({
                   boxShadow: "0 0 0 1px #969382",
                 }}
                 color={"#8C603D"}
-                size={"lg"}
+                size={size}
                 {...formRef.register("username", {
                   required: "Username is required",
                 })}
@@ -240,7 +242,7 @@ function RegisterPage({
                   boxShadow: "0 0 0 1px #969382",
                 }}
                 color={"#8C603D"}
-                size={"lg"}
+                size={size}
                 {...formRef.register("email", {
                   required: "E-mail is required",
                   pattern: {
@@ -270,7 +272,7 @@ function RegisterPage({
                   boxShadow: "0 0 0 1px #969382",
                 }}
                 color={"#8C603D"}
-                size={"lg"}
+                size={size}
                 {...formRef.register("password", {
                   required: "You must specify a password",
                   minLength: {
@@ -301,7 +303,7 @@ function RegisterPage({
                   boxShadow: "0 0 0 1px #969382",
                 }}
                 color={"#8C603D"}
-                size={"lg"}
+                size={size}
                 {...formRef.register("confirmPassword", {
                   validate: (value) =>
                     value === formData.password || "The passwords do not match",
@@ -321,7 +323,7 @@ function RegisterPage({
             </FormControl>
             <Button
               type={"submit"}
-              size={"lg"}
+              size={size}
               width={"full"}
               bgColor={"#BE9770"}
               _hover={{ bgColor: "#E7D7C5" }}
@@ -337,7 +339,7 @@ function RegisterPage({
           </VStack>
         </SlideFade>
       </form>
-      <Text color={"#815230"} letterSpacing={"0.4px"}>
+      <Text color={"#815230"} letterSpacing={"0.4px"} size={fontSize}>
         Already have account?{" "}
         <Link onClick={handleToLogin} color={"green.500"}>
           Click here to sign in
