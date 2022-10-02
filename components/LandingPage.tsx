@@ -89,7 +89,11 @@ function LandingPage() {
                     !loginDisclosure.isOpen) ||
                   dataLogin.data
                 ) && (
-                  <HStack marginTop={"50px"} spacing={"30px"}>
+                  <Flex
+                    marginTop={"50px"}
+                    gap={"30px"}
+                    flexDirection={{ sm: "column", md: "row" }}
+                  >
                     <Box
                       padding={"10px"}
                       bgColor={"#F9F3EA"}
@@ -99,7 +103,7 @@ function LandingPage() {
                       }
                     >
                       <Button
-                        size={"lg"}
+                        size={size}
                         width={"full"}
                         bgColor={"#BE9770"}
                         paddingX={"80px"}
@@ -123,6 +127,7 @@ function LandingPage() {
                         <HStack spacing={"10px"}>
                           <Image src="./Desktop_Icon.png" alt="Desktop_Icon" />
                           <Heading
+                            size={size}
                             marginY={"auto !important"}
                             height={"full"}
                             lineHeight={"0"}
@@ -141,7 +146,7 @@ function LandingPage() {
                       }
                     >
                       <Button
-                        size={"lg"}
+                        size={size}
                         width={"full"}
                         bgColor={"#BE9770"}
                         paddingX={"80px"}
@@ -165,6 +170,7 @@ function LandingPage() {
                         <HStack spacing={"10px"}>
                           <Image src="./Mobile_Icon.png" alt="Mobile_Icon" />
                           <Heading
+                            size={size}
                             marginY={"auto !important"}
                             height={"full"}
                             lineHeight={"0"}
@@ -183,7 +189,7 @@ function LandingPage() {
                       }
                     >
                       <Button
-                        size={"lg"}
+                        size={size}
                         width={"full"}
                         bgColor={"#BE9770"}
                         paddingX={"80px"}
@@ -206,6 +212,7 @@ function LandingPage() {
                             alt="Dashboard_Icon"
                           />
                           <Heading
+                            size={size}
                             marginY={"auto !important"}
                             height={"full"}
                             lineHeight={"0"}
@@ -215,7 +222,7 @@ function LandingPage() {
                         </HStack>
                       </Button>
                     </Box>
-                  </HStack>
+                  </Flex>
                 )}
               </Center>
               <VStack
