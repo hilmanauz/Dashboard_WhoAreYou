@@ -80,7 +80,7 @@ function LandingPage() {
                     width={{ lg: "125px", md: "110px", sm: "90px" }}
                   />
                 </Box>
-                <Box width={{ lg: "750px", md: "70vw", sm: "350px" }}>
+                <Box width={{ lg: "600px", md: "70vw", sm: "350px" }}>
                   <Image src={"./Logo.png"} alt={"logo"} objectFit={"cover"} />
                 </Box>
                 {!!(
