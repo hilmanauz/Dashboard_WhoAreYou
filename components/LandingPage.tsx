@@ -22,7 +22,7 @@ import React from "react";
 import Scrollbars from "rc-scrollbars";
 import AutoSizer from "react-virtualized-auto-sizer";
 import { BiMinus } from "react-icons/bi";
-import SignModal from "./SignModal";
+import SignModal, { fontSize } from "./SignModal";
 import Router from "next/router";
 import { getCookie } from "cookies-next";
 import useClient from "../engines/useClient";
@@ -103,7 +103,7 @@ function LandingPage() {
                       }
                     >
                       <Button
-                        size={size}
+                        size={fontSize}
                         width={"full"}
                         bgColor={"#BE9770"}
                         paddingX={"80px"}
@@ -127,7 +127,7 @@ function LandingPage() {
                         <HStack spacing={"10px"}>
                           <Image src="./Desktop_Icon.png" alt="Desktop_Icon" />
                           <Heading
-                            size={size}
+                            size={fontSize}
                             marginY={"auto !important"}
                             height={"full"}
                             lineHeight={"0"}
@@ -146,7 +146,7 @@ function LandingPage() {
                       }
                     >
                       <Button
-                        size={size}
+                        size={fontSize}
                         width={"full"}
                         bgColor={"#BE9770"}
                         paddingX={"80px"}
@@ -170,7 +170,7 @@ function LandingPage() {
                         <HStack spacing={"10px"}>
                           <Image src="./Mobile_Icon.png" alt="Mobile_Icon" />
                           <Heading
-                            size={size}
+                            size={fontSize}
                             marginY={"auto !important"}
                             height={"full"}
                             lineHeight={"0"}
@@ -212,7 +212,7 @@ function LandingPage() {
                             alt="Dashboard_Icon"
                           />
                           <Heading
-                            size={size}
+                            size={fontSize}
                             marginY={"auto !important"}
                             height={"full"}
                             lineHeight={"0"}
