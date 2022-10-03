@@ -31,53 +31,6 @@ function NilaiAkhir({
     accountInfo: any;
   };
 }) {
-  // const personalityLevelPercentage = React.useMemo(() => {
-  //   if (!userData.dataLogin?.personalityData) return;
-  //   const personality = userData.dataLogin.personalityData.Value.replace(
-  //     /\[|\]/g,
-  //     ""
-  //   ).split(",");
-  //   return Object.entries({
-  //     D: {
-  //       value: percentageCount(personality[0]),
-  //       title: "Dominance",
-  //       backgroundColor: "#F9AF1A",
-  //       description:
-  //         "Orang-orang dengan kepribadian Dominance memiliki kecenderungan karakter yang dominan, kuat, dengan ego yang tinggi. They are independent and risk taker. Mereka mudah merasa bosan dengan rutinitas, menyukai tantangan dan inovasi. Kepribadian DISC ini juga menyukai authority, responsibility, decision making, problem solving, multi tasking, maupun hal-hal lain yang membuatnya menjadi lebih dominan.",
-  //     },
-  //     I: {
-  //       value: percentageCount(personality[1]),
-  //       title: "Influence",
-  //       backgroundColor: "#F90807",
-  //       description:
-  //         "Karakter DISC ini memiliki pengaruh yang besar bagi sekitarnya. Kepercayaan dirinya, antusiasmenya, selera humornya, dan optimismenya membawa semangat bagi lingkungannya. Sebagai negosiator yang handal, orang-orang dengan kepribadian Influence memiliki kemampuan persuasif yang bagus. Mereka menyukai popularitas, sehingga mereka sulit menerima penolakan dari orang lain.",
-  //     },
-  //     S: {
-  //       value: percentageCount(personality[2]),
-  //       title: "Steadiness",
-  //       backgroundColor: "#1E75BB",
-  //       description:
-  //         "Konsisten, tenang, dan sabar adalah beberapa karakter yang menggambarkan kepribadian DISC yang satu ini. Sebaliknya, orang-orang dengan kepribadian Steadiness sulit menerima perubahan dan butuh waktu lama untuk menyesuaikan diri dengan lingkungan baru. Maka, mereka menyukai lingkungan yang memberi rasa aman tanpa perubahan yang mendadak.",
-  //     },
-  //     C: {
-  //       value: percentageCount(personality[3]),
-  //       title: "Compliance",
-  //       backgroundColor: "#3DB508",
-  //       description:
-  //         "Orang-orang berkarakter Compliance biasanya tekun, sistematis, teliti, cermat, fokus pada ketepatan dan kualitas. Cenderung analitis dan kritis, sosok kepribadian DISC ini suka mengejar kualitas dengan standar yang tinggi dan mengerjakan tugas-tugas yang rinci. Karenanya, mereka menyukai batasan, prosedur, dan metode yang jelas.",
-  //     },
-  //   });
-  // }, [userData.dataLogin]);
-
-  // const personalityResult = React.useMemo(() => {
-  //   if (!personalityLevelPercentage) return;
-  //   return _.sortBy(personalityLevelPercentage, [
-  //     function ([key, value]) {
-  //       return value.value;
-  //     },
-  //   ]).reverse()[0];
-  // }, [personalityLevelPercentage]);
-
   return (
     <GridItem
       colSpan={2}

@@ -7,18 +7,23 @@ import {
   UseDisclosureReturn,
   Link,
   SlideFade,
+  HStack,
+  Divider,
 } from "@chakra-ui/react";
 import { deleteCookie, setCookie } from "cookies-next";
 import React from "react";
 import { useForm } from "react-hook-form";
 import useClient from "../engines/useClient";
+import { size } from "./LandingPage";
 import { fontSize, LoginForm } from "./SignModal";
 
 function LoginPage({
   modalDisclosure,
   signUpDisclosure,
+  forgotDisclosure,
 }: {
   modalDisclosure: UseDisclosureReturn;
+  forgotDisclosure: UseDisclosureReturn;
   signUpDisclosure: UseDisclosureReturn;
 }) {
   const formRef = useForm<LoginForm>({
@@ -42,6 +47,7 @@ function LoginPage({
         const dataLogin = await client.login(data);
         if (dataLogin.data) {
           const entityToken = await client.getEntityToken();
+          modalDisclosure.onClose();
           deleteCookie("PlayFabId");
           deleteCookie("SessionTicket");
           setCookie("EntityToken", entityToken.data.EntityToken);
@@ -54,7 +60,6 @@ function LoginPage({
           status: "success",
           duration: 2000,
         });
-        setTimeout(() => modalDisclosure.onClose(), 2000);
       } catch (error: any) {
         toast.closeAll();
         setIsLoading(false);
@@ -111,21 +116,52 @@ function LoginPage({
               color={"#815230"}
               size={"lg"}
             />
-            <Button
-              type={"submit"}
-              size={"lg"}
-              width={"full"}
-              bgColor={"#BE9770"}
-              _hover={{ bgColor: "#E7D7C5" }}
-              color={"white"}
-              fontSize={"22px"}
-              isLoading={isLoading}
-              boxShadow={
-                "0 5px 0 0 rgb(0 0 0 / 15%), 0 0 5px 0 rgb(0 0 0 / 14%)"
-              }
-            >
-              Sign in
-            </Button>
+            <VStack width={"full"} gap={2}>
+              <Button
+                type={"submit"}
+                size={"lg"}
+                width={"full"}
+                bgColor={"#BE9770"}
+                _hover={{ bgColor: "#E7D7C5" }}
+                color={"white"}
+                fontSize={"22px"}
+                isLoading={isLoading}
+                boxShadow={
+                  "0 5px 0 0 rgb(0 0 0 / 15%), 0 0 5px 0 rgb(0 0 0 / 14%)"
+                }
+              >
+                Sign in
+              </Button>
+              <HStack width={"100%"}>
+                <Divider
+                  width={"100%"}
+                  borderBottomWidth={"3px"}
+                  borderColor={"#BE9770"}
+                />
+                <Text size={size} color={"#815230"}>
+                  Or
+                </Text>
+                <Divider
+                  width={"100%"}
+                  borderBottomWidth={"3px"}
+                  borderColor={"#BE9770"}
+                />
+              </HStack>
+              <Button
+                size={"lg"}
+                width={"full"}
+                bgColor={"#BE9770"}
+                _hover={{ bgColor: "#E7D7C5" }}
+                color={"white"}
+                fontSize={"22px"}
+                onClick={forgotDisclosure.onOpen}
+                boxShadow={
+                  "0 5px 0 0 rgb(0 0 0 / 15%), 0 0 5px 0 rgb(0 0 0 / 14%)"
+                }
+              >
+                Forgot Password
+              </Button>
+            </VStack>
           </VStack>
         </form>
         <Text color={"#815230"} letterSpacing={"0.4px"} size={fontSize}>

@@ -46,6 +46,13 @@ export default function useClient() {
       );
       return dataLogin.data as AxiosResponse<LoginInstance, any>;
     },
+    forgot: async (email: string) => {
+      const forgot = await axios.post(
+        `https://${TitleId}.playfabapi.com/Client/SendAccountRecoveryEmail`,
+        { Email: email, TitleId }
+      );
+      return forgot.data;
+    },
     validateEntityToken: () => {
       const EntityToken = getCookie("EntityToken");
       // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -84,27 +91,32 @@ export default function useClient() {
       const PlayFabId = getCookie("PlayFabId") || "";
       // eslint-disable-next-line react-hooks/rules-of-hooks
       return useSWR(["getData", SessionTicket, PlayFabId], async () => {
-        const dataLogin = await axios.post(
-          `https://${TitleId}.playfabapi.com/Client/GetUserData`,
-          {},
-          {
-            headers: {
-              "X-Authorization": SessionTicket
+        try {
+          const dataLogin = await axios.post(
+            `https://${TitleId}.playfabapi.com/Client/GetUserData`,
+            {},
+            {
+              headers: {
+                "X-Authorization": SessionTicket
+              }
             }
-          }
-        );
-        const accountInfo = await axios.post(
-          `https://${TitleId}.playfabapi.com/Client/GetAccountInfo`,
-          {
-            PlayFabId: PlayFabId
-          },
-          {
-            headers: {
-              "X-Authorization": SessionTicket
+          );
+          const accountInfo = await axios.post(
+            `https://${TitleId}.playfabapi.com/Client/GetAccountInfo`,
+            {
+              PlayFabId: PlayFabId
+            },
+            {
+              headers: {
+                "X-Authorization": SessionTicket
+              }
             }
-          }
-        );
-        return { dataLogin: dataLogin.data?.data?.Data, accountInfo: accountInfo.data?.data?.AccountInfo };
+          );
+          return { dataLogin: dataLogin.data?.data?.Data, accountInfo: accountInfo.data?.data?.AccountInfo };
+        } catch (error) {
+          // @ts-ignore
+          return error.response;
+        }
       }, { revalidateOnReconnect: true, revalidateOnFocus: true, revalidateOnMount: true, refreshWhenOffline: true, refreshInterval: 1000, refreshWhenHidden: true })
     },
     updatePlayerData: async (data: any, SessionTicket: string) => {

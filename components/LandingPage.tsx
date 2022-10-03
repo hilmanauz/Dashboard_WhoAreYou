@@ -33,7 +33,7 @@ const widthContainer = { md: "2xl", lg: "80vw" };
 
 export const size = { lg: "lg", md: "md", sm: "sm" };
 
-const imageSize = { lg: "220px", md: "170px", sm: "120px" };
+const imageSize = { lg: "23px", md: "23px", sm: "23px", xs: "20px" };
 
 const topTitle = { md: -14, lg: -16, sm: -12 };
 
@@ -47,20 +47,16 @@ function LandingPage() {
   const dataLogin = client.getUserData();
   const validateToken = client.validateEntityToken();
   const EntityToken = getCookie("EntityToken");
-  console.log(
-    !!(
-      (!validateToken.data?.data?.error &&
-        EntityToken &&
-        !loginDisclosure.isOpen) ||
-      dataLogin.data
-    )
-  );
+
   return (
     <AutoSizer>
       {({ height, width }) => (
         <Scrollbars style={{ height, width }}>
           <Box h="full" w="full" position="relative">
-            <SignModal modalDisclosure={loginDisclosure} />
+            <SignModal
+              modalDisclosure={loginDisclosure}
+              dataLogin={dataLogin}
+            />
             <VStack alignItems={"normal"}>
               <Center
                 height={"100vh"}
@@ -71,159 +67,197 @@ function LandingPage() {
                 backgroundImage={"./background_title.png"}
                 flexDirection={"column"}
               >
-                <Box position={"absolute"} top={"30px"} right={"30px"}>
-                  <Image
+                <Box
+                  position={"absolute"}
+                  top={{ lg: "30px", md: "25px", sm: "20px" }}
+                  right={{ lg: "30px", md: "25px", sm: "20px" }}
+                  padding={"10px"}
+                  bgColor={"#F9F3EA"}
+                  borderRadius={"10px"}
+                  boxShadow={
+                    "0 5px 0 0 rgb(0 0 0 / 15%), 0 0 5px 0 rgb(0 0 0 / 14%)"
+                  }
+                >
+                  <Button
+                    size={fontSize}
+                    width={"full"}
+                    bgColor={"#BE9770"}
+                    paddingX={{ md: "15px", sm: "20px" }}
+                    paddingY={{ md: "25px", sm: "20px" }}
+                    _hover={{ opacity: "0.8" }}
                     onClick={loginDisclosure.onOpen}
-                    src={"Account_Button.png"}
-                    alt={"Account_Button"}
-                    cursor={"pointer"}
-                    width={{ lg: "125px", md: "110px", sm: "90px" }}
-                  />
+                    color={"white"}
+                    fontSize={"22px"}
+                    marginTop={"-4px"}
+                    boxShadow={"0 4px #815230"}
+                    _active={{
+                      position: "relative",
+                      top: "4px",
+                      boxShadow: "none",
+                    }}
+                  >
+                    <HStack spacing={"10px"}>
+                      <Image
+                        src="./icon.png"
+                        alt="icon"
+                        width={{ sm: "16px", md: "20px", lg: "22px" }}
+                      />
+                      <Text
+                        size={size}
+                        marginY={"auto !important"}
+                        height={"full"}
+                        lineHeight={"0"}
+                      >
+                        {!dataLogin.data?.data?.error ? "Sign out" : "Sign in"}
+                      </Text>
+                    </HStack>
+                  </Button>
                 </Box>
                 <Box width={{ lg: "600px", md: "70vw", sm: "350px" }}>
                   <Image src={"./Logo.png"} alt={"logo"} objectFit={"cover"} />
                 </Box>
-                {!!(
-                  (!validateToken.data?.data?.error &&
-                    EntityToken &&
-                    !loginDisclosure.isOpen) ||
-                  dataLogin.data
-                ) && (
-                  <Flex
-                    marginTop={"50px"}
-                    gap={"30px"}
-                    flexDirection={{ sm: "column", md: "row" }}
-                  >
-                    <Box
-                      padding={"10px"}
-                      bgColor={"#F9F3EA"}
-                      borderRadius={"10px"}
-                      boxShadow={
-                        "0 5px 0 0 rgb(0 0 0 / 15%), 0 0 5px 0 rgb(0 0 0 / 14%)"
-                      }
+                {!validateToken.data?.data?.error &&
+                  !dataLogin.data?.data?.error &&
+                  EntityToken &&
+                  !loginDisclosure.isOpen && (
+                    <Flex
+                      marginTop={"50px"}
+                      gap={"30px"}
+                      flexDirection={{ sm: "column", md: "row" }}
                     >
-                      <Button
-                        size={fontSize}
-                        width={"full"}
-                        bgColor={"#BE9770"}
-                        paddingX={"80px"}
-                        paddingY={"30px"}
-                        _hover={{ opacity: "0.8" }}
-                        onClick={() =>
-                          Router.push(
-                            "https://play.everidea.id/games/buildtest/thinkhalf/whoareyou/"
-                          )
+                      <Box
+                        padding={"10px"}
+                        bgColor={"#F9F3EA"}
+                        borderRadius={"10px"}
+                        boxShadow={
+                          "0 5px 0 0 rgb(0 0 0 / 15%), 0 0 5px 0 rgb(0 0 0 / 14%)"
                         }
-                        color={"white"}
-                        fontSize={"22px"}
-                        marginTop={"-4px"}
-                        boxShadow={"0 4px #815230"}
-                        _active={{
-                          position: "relative",
-                          top: "4px",
-                          boxShadow: "none",
-                        }}
                       >
-                        <HStack spacing={"10px"}>
-                          <Image src="./Desktop_Icon.png" alt="Desktop_Icon" />
-                          <Heading
-                            size={fontSize}
-                            marginY={"auto !important"}
-                            height={"full"}
-                            lineHeight={"0"}
-                          >
-                            Desktop
-                          </Heading>
-                        </HStack>
-                      </Button>
-                    </Box>
-                    <Box
-                      padding={"10px"}
-                      bgColor={"#F9F3EA"}
-                      borderRadius={"10px"}
-                      boxShadow={
-                        "0 5px 0 0 rgb(0 0 0 / 15%), 0 0 5px 0 rgb(0 0 0 / 14%)"
-                      }
-                    >
-                      <Button
-                        size={fontSize}
-                        width={"full"}
-                        bgColor={"#BE9770"}
-                        paddingX={"80px"}
-                        paddingY={"30px"}
-                        onClick={() =>
-                          Router.push(
-                            "https://play.everidea.id/games/buildtest/thinkhalf/mobile/whoareyou/"
-                          )
+                        <Button
+                          size={fontSize}
+                          width={"full"}
+                          bgColor={"#BE9770"}
+                          paddingX={"80px"}
+                          paddingY={"30px"}
+                          _hover={{ opacity: "0.8" }}
+                          onClick={() =>
+                            Router.push(
+                              "https://play.everidea.id/games/buildtest/thinkhalf/whoareyou/"
+                            )
+                          }
+                          color={"white"}
+                          fontSize={"22px"}
+                          marginTop={"-4px"}
+                          boxShadow={"0 4px #815230"}
+                          _active={{
+                            position: "relative",
+                            top: "4px",
+                            boxShadow: "none",
+                          }}
+                        >
+                          <HStack spacing={"10px"}>
+                            <Image
+                              src="./Desktop_Icon.png"
+                              alt="Desktop_Icon"
+                            />
+                            <Heading
+                              size={fontSize}
+                              marginY={"auto !important"}
+                              height={"full"}
+                              lineHeight={"0"}
+                            >
+                              Desktop
+                            </Heading>
+                          </HStack>
+                        </Button>
+                      </Box>
+                      <Box
+                        padding={"10px"}
+                        bgColor={"#F9F3EA"}
+                        borderRadius={"10px"}
+                        boxShadow={
+                          "0 5px 0 0 rgb(0 0 0 / 15%), 0 0 5px 0 rgb(0 0 0 / 14%)"
                         }
-                        _hover={{ opacity: "0.8" }}
-                        color={"white"}
-                        fontSize={"22px"}
-                        marginTop={"-4px"}
-                        boxShadow={"0 4px #815230"}
-                        _active={{
-                          position: "relative",
-                          top: "4px",
-                          boxShadow: "none",
-                        }}
                       >
-                        <HStack spacing={"10px"}>
-                          <Image src="./Mobile_Icon.png" alt="Mobile_Icon" />
-                          <Heading
-                            size={fontSize}
-                            marginY={"auto !important"}
-                            height={"full"}
-                            lineHeight={"0"}
-                          >
-                            Mobile
-                          </Heading>
-                        </HStack>
-                      </Button>
-                    </Box>
-                    <Box
-                      padding={"10px"}
-                      bgColor={"#F9F3EA"}
-                      borderRadius={"10px"}
-                      boxShadow={
-                        "0 5px 0 0 rgb(0 0 0 / 15%), 0 0 5px 0 rgb(0 0 0 / 14%)"
-                      }
-                    >
-                      <Button
-                        size={size}
-                        width={"full"}
-                        bgColor={"#BE9770"}
-                        paddingX={"80px"}
-                        paddingY={"30px"}
-                        onClick={() => Router.push("/dashboard")}
-                        _hover={{ opacity: "0.8" }}
-                        color={"white"}
-                        fontSize={"22px"}
-                        marginTop={"-4px"}
-                        boxShadow={"0 4px #815230"}
-                        _active={{
-                          position: "relative",
-                          top: "4px",
-                          boxShadow: "none",
-                        }}
+                        <Button
+                          size={fontSize}
+                          width={"full"}
+                          bgColor={"#BE9770"}
+                          paddingX={"80px"}
+                          paddingY={"30px"}
+                          onClick={() =>
+                            Router.push(
+                              "https://play.everidea.id/games/buildtest/thinkhalf/mobile/whoareyou/"
+                            )
+                          }
+                          _hover={{ opacity: "0.8" }}
+                          color={"white"}
+                          fontSize={"22px"}
+                          marginTop={"-4px"}
+                          boxShadow={"0 4px #815230"}
+                          _active={{
+                            position: "relative",
+                            top: "4px",
+                            boxShadow: "none",
+                          }}
+                        >
+                          <HStack spacing={"10px"}>
+                            <Image src="./Mobile_Icon.png" alt="Mobile_Icon" />
+                            <Heading
+                              size={fontSize}
+                              marginY={"auto !important"}
+                              height={"full"}
+                              lineHeight={"0"}
+                            >
+                              Mobile
+                            </Heading>
+                          </HStack>
+                        </Button>
+                      </Box>
+                      <Box
+                        padding={"10px"}
+                        bgColor={"#F9F3EA"}
+                        borderRadius={"10px"}
+                        boxShadow={
+                          "0 5px 0 0 rgb(0 0 0 / 15%), 0 0 5px 0 rgb(0 0 0 / 14%)"
+                        }
                       >
-                        <HStack spacing={"10px"}>
-                          <Image
-                            src="./Dashboard_Icon.png"
-                            alt="Dashboard_Icon"
-                          />
-                          <Heading
-                            size={fontSize}
-                            marginY={"auto !important"}
-                            height={"full"}
-                            lineHeight={"0"}
-                          >
-                            Dashboard
-                          </Heading>
-                        </HStack>
-                      </Button>
-                    </Box>
-                  </Flex>
-                )}
+                        <Button
+                          size={size}
+                          width={"full"}
+                          bgColor={"#BE9770"}
+                          paddingX={"80px"}
+                          paddingY={"30px"}
+                          onClick={() => Router.push("/dashboard")}
+                          _hover={{ opacity: "0.8" }}
+                          color={"white"}
+                          fontSize={"22px"}
+                          marginTop={"-4px"}
+                          boxShadow={"0 4px #815230"}
+                          _active={{
+                            position: "relative",
+                            top: "4px",
+                            boxShadow: "none",
+                          }}
+                        >
+                          <HStack spacing={"10px"}>
+                            <Image
+                              src="./Dashboard_Icon.png"
+                              alt="Dashboard_Icon"
+                            />
+                            <Heading
+                              size={fontSize}
+                              marginY={"auto !important"}
+                              height={"full"}
+                              lineHeight={"0"}
+                            >
+                              Dashboard
+                            </Heading>
+                          </HStack>
+                        </Button>
+                      </Box>
+                    </Flex>
+                  )}
               </Center>
               <VStack
                 backgroundImage={"./Background.png"}
