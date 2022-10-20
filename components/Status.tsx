@@ -11,11 +11,7 @@ import {
   Text,
   Divider,
 } from "@chakra-ui/react";
-import { css } from "@emotion/react";
 import React from "react";
-
-const percentageCount = (value: number) => Math.round((value / 24) * 100);
-const gridRadius = "20px";
 
 function Status({
   userData,
@@ -25,54 +21,10 @@ function Status({
     accountInfo: any;
   };
 }) {
-  // const personalityLevelPercentage = React.useMemo(() => {
-  //   if (!userData.dataLogin?.personalityData) return;
-  //   const personality = userData.dataLogin.personalityData.Value.replace(
-  //     /\[|\]/g,
-  //     ""
-  //   ).split(",");
-  //   return Object.entries({
-  //     D: {
-  //       value: percentageCount(personality[0]),
-  //       title: "Dominance",
-  //       backgroundColor: "#F9AF1A",
-  //       description:
-  //         "Orang-orang dengan kepribadian Dominance memiliki kecenderungan karakter yang dominan, kuat, dengan ego yang tinggi. They are independent and risk taker. Mereka mudah merasa bosan dengan rutinitas, menyukai tantangan dan inovasi. Kepribadian DISC ini juga menyukai authority, responsibility, decision making, problem solving, multi tasking, maupun hal-hal lain yang membuatnya menjadi lebih dominan.",
-  //     },
-  //     I: {
-  //       value: percentageCount(personality[1]),
-  //       title: "Influence",
-  //       backgroundColor: "#F90807",
-  //       description:
-  //         "Karakter DISC ini memiliki pengaruh yang besar bagi sekitarnya. Kepercayaan dirinya, antusiasmenya, selera humornya, dan optimismenya membawa semangat bagi lingkungannya. Sebagai negosiator yang handal, orang-orang dengan kepribadian Influence memiliki kemampuan persuasif yang bagus. Mereka menyukai popularitas, sehingga mereka sulit menerima penolakan dari orang lain.",
-  //     },
-  //     S: {
-  //       value: percentageCount(personality[2]),
-  //       title: "Steadiness",
-  //       backgroundColor: "#1E75BB",
-  //       description:
-  //         "Konsisten, tenang, dan sabar adalah beberapa karakter yang menggambarkan kepribadian DISC yang satu ini. Sebaliknya, orang-orang dengan kepribadian Steadiness sulit menerima perubahan dan butuh waktu lama untuk menyesuaikan diri dengan lingkungan baru. Maka, mereka menyukai lingkungan yang memberi rasa aman tanpa perubahan yang mendadak.",
-  //     },
-  //     C: {
-  //       value: percentageCount(personality[3]),
-  //       title: "Compliance",
-  //       backgroundColor: "#3DB508",
-  //       description:
-  //         "Orang-orang berkarakter Compliance biasanya tekun, sistematis, teliti, cermat, fokus pada ketepatan dan kualitas. Cenderung analitis dan kritis, sosok kepribadian DISC ini suka mengejar kualitas dengan standar yang tinggi dan mengerjakan tugas-tugas yang rinci. Karenanya, mereka menyukai batasan, prosedur, dan metode yang jelas.",
-  //     },
-  //   });
-  // }, [userData.dataLogin]);
-  // const scoreLevel2 = userData.dataLogin?.scoreData?.Value?.replace(
-  //   /\[|\]/g,
-  //   ""
-  // )
-  //   .split(",")
-  //   .map((score: string) => parseInt(score));
-
   return (
     <GridItem
       colSpan={2}
-      rowSpan={14}
+      rowSpan={{ lg: 14, sm: 13 }}
       bg="#F9F3EA"
       borderRadius={"10px"}
       boxShadow={"0 12px 0 0 rgb(0 0 0 / 15%), 0 0 12px 0 rgb(0 0 0 / 14%)"}
@@ -82,34 +34,51 @@ function Status({
       <Center height={"100%"} padding={"20px"}>
         <Box
           position={"absolute"}
-          top={{ md: -5, lg: -8 }}
+          top={{ sm: -4, md: -5, lg: -8 }}
           left={0}
           right={0}
           textAlign={"center"}
         >
           <HStack
-            width={"70%"}
+            width={{ lg: "70%", sm: "55%" }}
+            height={{ lg: "auto", md: "40px", sm: "25px" }}
             justifyContent={"center"}
             marginLeft={"auto"}
             marginRight={"auto"}
             paddingY={"0.5vw"}
-            borderRadius={"16px"}
+            borderRadius={{ lg: "16px", md: "12px", sm: "8px" }}
             bgColor={"#BE9770"}
             boxShadow={"0 5px 0 0 rgb(0 0 0 / 15%), 0 0 5px 0 rgb(0 0 0 / 14%)"}
           >
-            <span style={{ fontSize: "1vw", color: "white" }}>&#9670;</span>
-            <Heading color={"white"} paddingInline={"20px"} fontSize={"1.8vw"}>
+            <Text fontSize={{ lg: "1vw", sm: "2vw" }} color={"white"}>
+              &#9670;
+            </Text>
+            <Heading
+              color={"white"}
+              paddingInline={"20px"}
+              fontSize={{ lg: "1.8vw", sm: "3vw" }}
+            >
               Status
             </Heading>
-            <span style={{ fontSize: "1vw", color: "white" }}>&#9670;</span>
+            <Text fontSize={{ lg: "1vw", sm: "2vw" }} color={"white"}>
+              &#9670;
+            </Text>
           </HStack>
         </Box>
         {userData.dataLogin.Stage1Grade.Value ? (
-          <VStack width={"80%"} gap={4}>
-            <Heading color={"#C5A17E"} marginBottom={"-5px"} fontSize={"2vw"}>
+          <VStack
+            width={{ lg: "80%", md: "85%" }}
+            paddingTop={{ md: "20px" }}
+            gap={4}
+          >
+            <Heading
+              color={"#C5A17E"}
+              marginBottom={"-5px"}
+              fontSize={{ lg: "2vw", md: "3vw", sm: "3vw" }}
+            >
               Personality Result
             </Heading>
-            <HStack width={"100%"} gap={2}>
+            <HStack width={"100%"} gap={2} spacing={{ sm: 0, md: 2 }}>
               <VStack width={"25%"}>
                 <Center flexDirection={"column"} width={"full"} height={"25vh"}>
                   <Center
@@ -121,7 +90,7 @@ function Status({
                     paddingTop={"20px"}
                   >
                     <Heading
-                      fontSize={"3.8vw"}
+                      fontSize={{ lg: "3.8vw", sm: "7vw" }}
                       lineHeight={"0"}
                       fontWeight={"extrabold"}
                     >
@@ -134,12 +103,16 @@ function Status({
                     width={"100%"}
                     borderBottomRadius={"13px"}
                   >
-                    <Heading fontSize={"2.8vw"}>
+                    <Heading fontSize={{ lg: "2.8vw", sm: "4vw" }}>
                       {userData.dataLogin.DPercentage.Value}
                     </Heading>
                   </Center>
                 </Center>
-                <Text fontWeight={"bold"} color={"#5C4B44"} fontSize={"0.8vw"}>
+                <Text
+                  fontWeight={"bold"}
+                  color={"#5C4B44"}
+                  fontSize={{ lg: "0.8vw", sm: "2vw" }}
+                >
                   D-ominance
                 </Text>
               </VStack>
@@ -154,7 +127,7 @@ function Status({
                     paddingTop={"20px"}
                   >
                     <Heading
-                      fontSize={"3.8vw"}
+                      fontSize={{ lg: "3.8vw", sm: "7vw" }}
                       lineHeight={"0"}
                       fontWeight={"extrabold"}
                     >
@@ -167,12 +140,16 @@ function Status({
                     width={"100%"}
                     borderBottomRadius={"13px"}
                   >
-                    <Heading fontSize={"2.8vw"}>
+                    <Heading fontSize={{ lg: "2.8vw", sm: "4vw" }}>
                       {userData.dataLogin.IPercentage.Value}
                     </Heading>
                   </Center>
                 </Center>
-                <Text fontWeight={"bold"} color={"#5C4B44"} fontSize={"0.8vw"}>
+                <Text
+                  fontWeight={"bold"}
+                  color={"#5C4B44"}
+                  fontSize={{ lg: "0.8vw", sm: "2vw" }}
+                >
                   I-nfluence
                 </Text>
               </VStack>
@@ -187,7 +164,7 @@ function Status({
                     paddingTop={"20px"}
                   >
                     <Heading
-                      fontSize={"3.8vw"}
+                      fontSize={{ lg: "3.8vw", sm: "7vw" }}
                       lineHeight={"0"}
                       fontWeight={"extrabold"}
                     >
@@ -200,12 +177,16 @@ function Status({
                     width={"100%"}
                     borderBottomRadius={"13px"}
                   >
-                    <Heading fontSize={"2.8vw"}>
+                    <Heading fontSize={{ lg: "2.8vw", sm: "4vw" }}>
                       {userData.dataLogin.SPercentage.Value}
                     </Heading>
                   </Center>
                 </Center>
-                <Text fontWeight={"bold"} color={"#5C4B44"} fontSize={"0.8vw"}>
+                <Text
+                  fontWeight={"bold"}
+                  color={"#5C4B44"}
+                  fontSize={{ lg: "0.8vw", sm: "2vw" }}
+                >
                   S-teadiness
                 </Text>
               </VStack>
@@ -220,7 +201,7 @@ function Status({
                     paddingTop={"20px"}
                   >
                     <Heading
-                      fontSize={"3.8vw"}
+                      fontSize={{ lg: "3.8vw", sm: "7vw" }}
                       lineHeight={"0"}
                       fontWeight={"extrabold"}
                     >
@@ -233,12 +214,16 @@ function Status({
                     width={"100%"}
                     borderBottomRadius={"13px"}
                   >
-                    <Heading fontSize={"2.8vw"}>
+                    <Heading fontSize={{ lg: "2.8vw", sm: "4vw" }}>
                       {userData.dataLogin.CPercentage.Value}
                     </Heading>
                   </Center>
                 </Center>
-                <Text fontWeight={"bold"} color={"#5C4B44"} fontSize={"0.8vw"}>
+                <Text
+                  fontWeight={"bold"}
+                  color={"#5C4B44"}
+                  fontSize={{ lg: "0.8vw", sm: "2vw" }}
+                >
                   C-ompliance
                 </Text>
               </VStack>
@@ -267,7 +252,7 @@ function Status({
                 </Text>
                 <Text
                   letterSpacing={0.3}
-                  fontSize={{ base: "0.8vw", lg: "1vw" }}
+                  fontSize={{ base: "2.5vw", md: "2.2vw", lg: "1vw" }}
                   color={"#5C4B44"}
                   lineHeight={{ base: "6", md: "tall", lg: "6" }}
                 >

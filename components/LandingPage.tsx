@@ -727,8 +727,22 @@ function LandingPage() {
                       flexDirection={"column"}
                       justifyContent={"center"}
                     >
-                      <Grid templateColumns="repeat(3, 1fr)" gap={6}>
-                        <GridItem w="100%">
+                      <Grid
+                        templateColumns={{
+                          md: "repeat(3, 1fr)",
+                          sm: "repeat(2, 1fr)",
+                        }}
+                        templateRows={{
+                          md: "repeat(1, 1fr)",
+                          sm: "repeat(2, 1fr)",
+                        }}
+                        gap={6}
+                      >
+                        <GridItem
+                          w="100%"
+                          rowSpan={{ md: 1, sm: 2 }}
+                          colSpan={1}
+                        >
                           <VStack
                             alignItems={"flex-start"}
                             textAlign={"start"}
@@ -747,24 +761,44 @@ function LandingPage() {
                             </VStack>
                           </VStack>
                         </GridItem>
-                        <GridItem w="100%">
+                        <GridItem rowSpan={{ sm: 1, md: 2 }}>
                           <VStack>
                             <Heading size={size}>Get Social</Heading>
-                            <Text size={size}>Instagram</Text>
-                            <Text size={size}>Linkedin</Text>
-                            <Text size={size}>Youtube</Text>
-                            <Text size={size}>Medium</Text>
+                            <Grid
+                              templateColumns={{
+                                md: "repeat(1, 1fr)",
+                                sm: "repeat(2, 1fr)",
+                              }}
+                              templateRows={{
+                                md: "repeat(4, 1fr)",
+                                sm: "repeat(2, 1fr)",
+                              }}
+                              gap={2}
+                            >
+                              <GridItem w="100%">
+                                <Text size={size}>Instagram</Text>
+                              </GridItem>
+                              <GridItem w="100%">
+                                <Text size={size}>Linkedin</Text>
+                              </GridItem>
+                              <GridItem w="100%">
+                                <Text size={size}>Youtube</Text>
+                              </GridItem>
+                              <GridItem w="100%">
+                                <Text size={size}>Medium</Text>
+                              </GridItem>
+                            </Grid>
                           </VStack>
                         </GridItem>
-                        <GridItem w="100%">
+                        <GridItem rowSpan={{ sm: 1, md: 2 }}>
                           <VStack spacing={"20px"}>
                             <Image
-                              width={"200px"}
+                              width={{ md: "200px", sm: "100px" }}
                               src={"./Logo_EI.png"}
                               alt={"Logo_EI"}
                             />
                             <Image
-                              width={"200px"}
+                              width={{ md: "200px", sm: "100px" }}
                               src={"./Logo_Edu.png"}
                               alt={"Logo_Edu"}
                             />

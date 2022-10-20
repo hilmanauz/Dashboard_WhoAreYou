@@ -29,28 +29,31 @@ function Dashboard(
   return (
     <VStack
       position={"relative"}
-      height={"100vh"}
+      height={{ lg: "100vh", sm: "auto" }}
       width={"100vw"}
       backgroundImage={"./Background_Dashboard.png"}
+      overflowY={{ sm: "auto", lg: "unset" }}
     >
       <Center
-        width={"40%"}
-        height={"9%"}
-        borderBottomRadius={"70px"}
+        width={{ lg: "40%", sm: "70vw" }}
+        height={{ lg: "9%", sm: "35px" }}
+        borderBottomRadius={{ sm: "25px", lg: "70px", md: "30px" }}
         bgColor={"#f9f3ea"}
         color={"#BE9770"}
         boxShadow={"0 9px 0 0 rgb(0 0 0 / 15%), 0 0 9px 0 rgb(0 0 0 / 14%)"}
       >
-        <Heading fontSize={"2.35vw"}>Dashboard Information</Heading>
+        <Heading fontSize={{ lg: "2.35vw", sm: "4vw", md: "3.25vw" }}>
+          Dashboard Information
+        </Heading>
       </Center>
       <Grid
-        paddingTop={"50px"}
+        paddingTop={{ lg: "50px", sm: "30px" }}
         paddingBottom={"20px"}
         height={"91%"}
-        width={"90%"}
-        templateRows="repeat(14, 1fr)"
-        templateColumns="repeat(4, 1fr)"
-        gap={{ lg: 12, md: 6 }}
+        width={{ lg: "90%", sm: "95%" }}
+        templateRows={"repeat(14, 1fr)"}
+        templateColumns={{ lg: "repeat(4, 1fr)", sm: "repeat(1, 1fr)" }}
+        gap={{ md: 12, sm: 10 }}
       >
         <Profile userData={props} />
         <Status userData={props} />

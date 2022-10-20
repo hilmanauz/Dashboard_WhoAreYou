@@ -44,32 +44,41 @@ function NilaiAkhir({
       <Center height={"100%"} padding={"20px"} flexDirection={"column"}>
         <Box
           position={"absolute"}
-          top={{ md: -5, lg: -8 }}
+          top={{ sm: -4, md: -5, lg: -8 }}
           left={0}
           right={0}
           textAlign={"center"}
         >
           <HStack
-            width={"70%"}
+            width={{ lg: "70%", sm: "55%" }}
+            height={{ lg: "auto", md: "40px", sm: "25px" }}
             justifyContent={"center"}
             marginLeft={"auto"}
             marginRight={"auto"}
             paddingY={"0.5vw"}
-            borderRadius={"16px"}
+            borderRadius={{ lg: "16px", md: "12px", sm: "8px" }}
             bgColor={"#BE9770"}
             boxShadow={"0 5px 0 0 rgb(0 0 0 / 15%), 0 0 5px 0 rgb(0 0 0 / 14%)"}
           >
-            <span style={{ fontSize: "1vw", color: "white" }}>&#9670;</span>
-            <Heading color={"white"} paddingInline={"20px"} fontSize={"1.8vw"}>
+            <Text fontSize={{ lg: "1vw", sm: "2vw" }} color={"white"}>
+              &#9670;
+            </Text>
+            <Heading
+              color={"white"}
+              paddingInline={"20px"}
+              fontSize={{ lg: "1.8vw", sm: "3vw" }}
+            >
               Nilai Akhir
             </Heading>
-            <span style={{ fontSize: "1vw", color: "white" }}>&#9670;</span>
+            <Text fontSize={{ lg: "1vw", sm: "2vw" }} color={"white"}>
+              &#9670;
+            </Text>
           </HStack>
         </Box>
         <br />
         <Center minWidth={"100%"}>
           {userData.dataLogin.Stage2Score?.Value ? (
-            <HStack gap={4} width={"90%"}>
+            <HStack gap={4} width={{ md: "90%", sm: "100%" }}>
               <Center flexDirection={"column"} height={"27vh"} width={"30%"}>
                 <Center
                   height={"30%"}
@@ -78,7 +87,7 @@ function NilaiAkhir({
                   borderTopRadius={"10px"}
                   color={"#E7D7C5"}
                 >
-                  <Heading fontSize={"2vw"}>Score</Heading>
+                  <Heading fontSize={{ lg: "2vw", sm: "5vw" }}>Score</Heading>
                 </Center>
                 <Center
                   height={"70%"}
@@ -86,7 +95,7 @@ function NilaiAkhir({
                   width={"100%"}
                   borderBottomRadius={"10px"}
                 >
-                  <Heading fontSize={"6vw"}>
+                  <Heading fontSize={{ lg: "6vw", sm: "10vw" }}>
                     {userData.dataLogin.Stage2Score?.Value}
                   </Heading>
                 </Center>
@@ -106,7 +115,7 @@ function NilaiAkhir({
                         <Td
                           textAlign={"center"}
                           borderRight={"3px solid #BE9771"}
-                          fontSize={"1.2vw"}
+                          fontSize={{ lg: "1.2vw", sm: "4.5vw", md: "2.5vw" }}
                           fontWeight={"bold"}
                         >
                           1
@@ -115,7 +124,7 @@ function NilaiAkhir({
                           textAlign={"center"}
                           border={"3px solid #BE9771"}
                           borderTop={"transparent"}
-                          fontSize={"1.2vw"}
+                          fontSize={{ lg: "1.2vw", sm: "4.5vw", md: "2.5vw" }}
                           fontWeight={"bold"}
                         >
                           2
@@ -123,7 +132,7 @@ function NilaiAkhir({
                         <Td
                           textAlign={"center"}
                           borderLeft={"3px solid #BE9771"}
-                          fontSize={"1.2vw"}
+                          fontSize={{ lg: "1.2vw", sm: "4.5vw", md: "2.5vw" }}
                           fontWeight={"bold"}
                         >
                           3
@@ -134,7 +143,7 @@ function NilaiAkhir({
                           textAlign={"center"}
                           border={"3px solid #BE9771"}
                           borderLeft={"transparent"}
-                          fontSize={"1.3vw"}
+                          fontSize={{ lg: "1.3vw", sm: "2.3vw" }}
                           fontWeight={"bold"}
                         >
                           22/22
@@ -142,7 +151,7 @@ function NilaiAkhir({
                         <Td
                           textAlign={"center"}
                           border={"3px solid #BE9771"}
-                          fontSize={"1.3vw"}
+                          fontSize={{ lg: "1.3vw", sm: "2.3vw" }}
                           fontWeight={"bold"}
                         >
                           22/22
@@ -151,7 +160,7 @@ function NilaiAkhir({
                           textAlign={"center"}
                           border={"3px solid #BE9771"}
                           borderRight={"transparent"}
-                          fontSize={"1.3vw"}
+                          fontSize={{ lg: "1.3vw", sm: "2.3vw" }}
                           fontWeight={"bold"}
                         >
                           22/22
@@ -162,7 +171,7 @@ function NilaiAkhir({
                           textAlign={"center"}
                           border={"3px solid #BE9771"}
                           borderLeft={"transparent"}
-                          fontSize={"1.2vw"}
+                          fontSize={{ lg: "1.2vw", sm: "4.5vw", md: "2.5vw" }}
                           fontWeight={"bold"}
                         >
                           4
@@ -170,7 +179,7 @@ function NilaiAkhir({
                         <Td
                           textAlign={"center"}
                           border={"3px solid #BE9771"}
-                          fontSize={"1.2vw"}
+                          fontSize={{ lg: "1.2vw", sm: "4.5vw", md: "2.5vw" }}
                           fontWeight={"bold"}
                         >
                           5
@@ -179,7 +188,7 @@ function NilaiAkhir({
                           textAlign={"center"}
                           border={"3px solid #BE9771"}
                           borderRight={"transparent"}
-                          fontSize={"1.2vw"}
+                          fontSize={{ lg: "1.2vw", sm: "4.5vw", md: "2.5vw" }}
                           fontWeight={"bold"}
                         >
                           6
@@ -190,7 +199,7 @@ function NilaiAkhir({
                           textAlign={"center"}
                           borderColor={"transparent"}
                           borderRight={"3px solid #BE9771"}
-                          fontSize={"1.3vw"}
+                          fontSize={{ lg: "1.3vw", sm: "2.3vw" }}
                           fontWeight={"bold"}
                         >
                           22/22
@@ -198,7 +207,7 @@ function NilaiAkhir({
                         <Td
                           textAlign={"center"}
                           borderColor={"transparent"}
-                          fontSize={"1.3vw"}
+                          fontSize={{ lg: "1.3vw", sm: "2.3vw" }}
                           fontWeight={"bold"}
                         >
                           22/22
@@ -207,7 +216,7 @@ function NilaiAkhir({
                           textAlign={"center"}
                           borderColor={"transparent"}
                           borderLeft={"3px solid #BE9771"}
-                          fontSize={"1.3vw"}
+                          fontSize={{ lg: "1.3vw", sm: "2.3vw" }}
                           fontWeight={"bold"}
                         >
                           22/22
