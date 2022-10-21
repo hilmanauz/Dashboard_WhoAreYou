@@ -71,7 +71,7 @@ function Profile({
         >
           <HStack
             width={{ lg: "70%", sm: "55%" }}
-            height={{ lg: "auto", md: "40px", sm: "25px" }}
+            height={{ lg: "auto", md: "40px", sm: "30px" }}
             justifyContent={"center"}
             marginLeft={"auto"}
             marginRight={"auto"}
@@ -80,17 +80,17 @@ function Profile({
             bgColor={"#BE9770"}
             boxShadow={"0 5px 0 0 rgb(0 0 0 / 15%), 0 0 5px 0 rgb(0 0 0 / 14%)"}
           >
-            <Text fontSize={{ lg: "1vw", sm: "2vw" }} color={"white"}>
+            <Text fontSize={{ lg: "1vw", sm: "2.5vw" }} color={"white"}>
               &#9670;
             </Text>
             <Heading
               color={"white"}
               paddingInline={"20px"}
-              fontSize={{ lg: "1.8vw", sm: "3vw" }}
+              fontSize={{ lg: "1.8vw", sm: "4vw" }}
             >
               Profile
             </Heading>
-            <Text fontSize={{ lg: "1vw", sm: "2vw" }} color={"white"}>
+            <Text fontSize={{ lg: "1vw", sm: "2.5vw" }} color={"white"}>
               &#9670;
             </Text>
           </HStack>
