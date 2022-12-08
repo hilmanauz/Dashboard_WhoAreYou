@@ -13,6 +13,13 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 
+const personality = {
+  D: "Dominance",
+  I: "Influence",
+  S: "Steadiness",
+  C: "Compliance",
+};
+
 function Status({
   userData,
 }: {
@@ -21,6 +28,7 @@ function Status({
     accountInfo: any;
   };
 }) {
+  const personalityValue = userData.dataLogin.Stage1Grade.Value as string;
   return (
     <GridItem
       colSpan={2}
@@ -31,7 +39,7 @@ function Status({
       outlineOffset={"-11px"}
       position={"relative"}
     >
-      <Center height={"100%"} padding={"20px"}>
+      <Center height={"100%"} width={"100%"} padding={"8%"}>
         <Box
           position={"absolute"}
           top={{ sm: -4, md: -5, lg: -8 }}
@@ -66,11 +74,7 @@ function Status({
           </HStack>
         </Box>
         {userData.dataLogin.Stage1Grade.Value ? (
-          <VStack
-            width={{ lg: "80%", md: "85%" }}
-            paddingTop={{ md: "20px" }}
-            gap={4}
-          >
+          <VStack width={"100%"} gap={4} height={"95%"}>
             <Heading
               color={"#C5A17E"}
               marginBottom={"-5px"}
@@ -78,9 +82,14 @@ function Status({
             >
               Personality Result
             </Heading>
-            <HStack width={"100%"} gap={2} spacing={{ sm: 0, md: 2 }}>
-              <VStack width={"25%"}>
-                <Center flexDirection={"column"} width={"full"} height={"25vh"}>
+            <HStack
+              width={"100%"}
+              gap={2}
+              spacing={{ sm: 0, md: 2 }}
+              height={"100%"}
+            >
+              <VStack width={"25%"} height={"100%"}>
+                <Center flexDirection={"column"} width={"full"} height={"100%"}>
                   <Center
                     height={"50%"}
                     bgColor={"#BE9771"}
@@ -116,8 +125,8 @@ function Status({
                   D-ominance
                 </Text>
               </VStack>
-              <VStack width={"25%"}>
-                <Center flexDirection={"column"} width={"full"} height={"25vh"}>
+              <VStack width={"25%"} height={"100%"}>
+                <Center flexDirection={"column"} width={"full"} height={"100%"}>
                   <Center
                     height={"50%"}
                     bgColor={"#BE9771"}
@@ -153,8 +162,8 @@ function Status({
                   I-nfluence
                 </Text>
               </VStack>
-              <VStack width={"25%"}>
-                <Center flexDirection={"column"} width={"full"} height={"25vh"}>
+              <VStack width={"25%"} height={"100%"}>
+                <Center flexDirection={"column"} width={"full"} height={"100%"}>
                   <Center
                     height={"50%"}
                     bgColor={"#BE9771"}
@@ -190,8 +199,8 @@ function Status({
                   S-teadiness
                 </Text>
               </VStack>
-              <VStack width={"25%"}>
-                <Center flexDirection={"column"} width={"full"} height={"25vh"}>
+              <VStack width={"25%"} height={"100%"}>
+                <Center flexDirection={"column"} width={"full"} height={"100%"}>
                   <Center
                     height={"50%"}
                     bgColor={"#BE9771"}
@@ -233,12 +242,9 @@ function Status({
               borderBottomWidth={"3px"}
               width={"100%"}
             />
-            <HStack>
+            <HStack height={"100%"}>
               <Box width={"30%"}>
-                <Image
-                  src={`./${userData.dataLogin.Stage1Grade.Value}_dash.png`}
-                  alt={"D_dash"}
-                />
+                <Image src={`./${personalityValue}_dash.png`} alt={"D_dash"} />
               </Box>
               <Spacer />
               <VStack width={"70%"} alignItems={"normal"}>
@@ -248,7 +254,11 @@ function Status({
                   letterSpacing={0.5}
                   fontSize={{ sm: "2vw", lg: "1.2vw" }}
                 >
-                  Kamu adalah tipe
+                  Kamu adalah{" "}
+                  <span style={{ fontWeight: "bolder" }}>
+                    {/* @ts-ignore */}
+                    {personality[personalityValue]}
+                  </span>
                 </Text>
                 <Text
                   letterSpacing={0.3}

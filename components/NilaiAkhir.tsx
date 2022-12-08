@@ -76,10 +76,10 @@ function NilaiAkhir({
           </HStack>
         </Box>
         <br />
-        <Center minWidth={"100%"}>
+        <Center minWidth={"100%"} minHeight={"100%"}>
           {userData.dataLogin.Stage2Score?.Value ? (
-            <HStack gap={4} width={{ md: "90%", sm: "100%" }}>
-              <Center flexDirection={"column"} height={"27vh"} width={"30%"}>
+            <HStack gap={4} width={{ md: "90%", sm: "100%" }} height={"75%"}>
+              <Center flexDirection={"column"} height={"100%"} width={"30%"}>
                 <Center
                   height={"30%"}
                   bgColor={"#BE9771"}
@@ -102,14 +102,14 @@ function NilaiAkhir({
               </Center>
               <Center
                 flexDirection={"column"}
-                height={"27vh"}
+                height={"100%"}
                 bgColor={"#E7D7C5"}
                 width={"70%"}
                 borderRadius={"10px"}
                 position={"relative"}
               >
                 <TableContainer width={"90%"} overflowX={"hidden"}>
-                  <Table size="sm">
+                  <Table size="sm" height={"full"}>
                     <Tbody>
                       <Tr color={"#BE9771"}>
                         <Td

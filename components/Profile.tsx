@@ -58,7 +58,7 @@ function Profile({
       <Center
         height={"100%"}
         width={"100%"}
-        padding={{ lg: "40px", sm: "25px" }}
+        padding={{ lg: "4%", sm: "25px" }}
         flexDirection={{ md: "row", sm: "column" }}
         paddingY={"0px"}
       >

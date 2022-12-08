@@ -50,6 +50,7 @@ function Dashboard(
         paddingTop={{ lg: "50px", sm: "30px" }}
         paddingBottom={"20px"}
         height={"91%"}
+        minHeight={"850px"}
         width={{ lg: "90%", sm: "95%" }}
         templateRows={"repeat(14, 1fr)"}
         templateColumns={{ lg: "repeat(4, 1fr)", sm: "repeat(1, 1fr)" }}
