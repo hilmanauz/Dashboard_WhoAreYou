@@ -11,6 +11,7 @@ import {
   Text,
   Divider,
 } from "@chakra-ui/react";
+import { css } from "@emotion/react";
 import React from "react";
 
 const personality = {
@@ -74,11 +75,20 @@ function Status({
           </HStack>
         </Box>
         {userData.dataLogin.Stage1Grade.Value ? (
-          <VStack width={"100%"} gap={4} height={"95%"}>
+          <VStack
+            width={"100%"}
+            gap={4}
+            height={{ lg: "95%", md: "60vh", sm: "95%" }}
+            css={css`
+              @media only screen and (orientation: landscape) and (max-width: 992px) {
+                height: auto;
+              }
+            `}
+          >
             <Heading
               color={"#C5A17E"}
               marginBottom={"-5px"}
-              fontSize={{ lg: "2vw", md: "3vw", sm: "3vw" }}
+              fontSize={{ lg: "2vw", md: "3vw", sm: "3.5vw" }}
             >
               Personality Result
             </Heading>
@@ -87,6 +97,11 @@ function Status({
               gap={2}
               spacing={{ sm: 0, md: 2 }}
               height={"100%"}
+              css={css`
+                @media only screen and (orientation: landscape) and (max-width: 992px) {
+                  height: 50vh;
+                }
+              `}
             >
               <VStack width={"25%"} height={"100%"}>
                 <Center flexDirection={"column"} width={"full"} height={"100%"}>

@@ -18,6 +18,7 @@ import {
   Thead,
   Tr,
 } from "@chakra-ui/react";
+import { css } from "@emotion/react";
 import { deleteCookie } from "cookies-next";
 import Router from "next/router";
 import React from "react";
@@ -58,7 +59,7 @@ function Profile({
       <Center
         height={"100%"}
         width={"100%"}
-        padding={{ lg: "4%", sm: "25px" }}
+        padding={{ lg: "5%", sm: "25px" }}
         flexDirection={{ md: "row", sm: "column" }}
         paddingY={"0px"}
       >
@@ -133,13 +134,12 @@ function Profile({
             flexDirection={"column"}
             alignItems={"flex-start"}
           >
-            <br />
             <TableContainer width={"full"}>
               <Table size="sm">
                 <Tbody>
                   <Tr border={"2px solid #D7BFA4"}>
                     <Th borderRight={"2px solid #D7BFA4"} color={"#C5A27F"}>
-                      <HStack width={{ lg: "150px", sm: "90px", md: "140px" }}>
+                      <HStack width={{ lg: "8vw", sm: "20vw", md: "140px" }}>
                         <Text
                           fontSize={{ lg: "0.7vw", md: "1.8vw", sm: "2vw" }}
                         >
@@ -159,7 +159,7 @@ function Profile({
                   </Tr>
                   <Tr border={"2px solid #D7BFA4"}>
                     <Th borderRight={"2px solid #D7BFA4"} color={"#C5A27F"}>
-                      <HStack width={{ lg: "150px", sm: "90px", md: "140px" }}>
+                      <HStack width={{ lg: "8vw", sm: "20vw", md: "140px" }}>
                         <Text
                           fontSize={{ lg: "0.7vw", md: "1.8vw", sm: "2vw" }}
                         >
@@ -179,7 +179,7 @@ function Profile({
                   </Tr>
                   <Tr border={"2px solid #D7BFA4"}>
                     <Th borderRight={"2px solid #D7BFA4"} color={"#C5A27F"}>
-                      <HStack width={{ lg: "150px", sm: "90px", md: "140px" }}>
+                      <HStack width={{ lg: "8vw", sm: "20vw", md: "140px" }}>
                         <Text
                           fontSize={{ lg: "0.7vw", md: "1.8vw", sm: "2vw" }}
                         >
@@ -199,7 +199,7 @@ function Profile({
                   </Tr>
                   <Tr border={"2px solid #D7BFA4"}>
                     <Th borderRight={"2px solid #D7BFA4"} color={"#C5A27F"}>
-                      <HStack width={{ lg: "150px", sm: "90px", md: "140px" }}>
+                      <HStack width={{ lg: "8vw", sm: "20vw", md: "140px" }}>
                         <Text
                           fontSize={{ lg: "0.7vw", md: "1.8vw", sm: "2vw" }}
                         >
@@ -219,7 +219,7 @@ function Profile({
                   </Tr>
                   <Tr border={"2px solid #D7BFA4"}>
                     <Th borderRight={"2px solid #D7BFA4"} color={"#C5A27F"}>
-                      <HStack width={{ lg: "150px", sm: "90px", md: "140px" }}>
+                      <HStack width={{ lg: "8vw", sm: "20vw", md: "140px" }}>
                         <Text
                           fontSize={{ lg: "0.7vw", md: "1.8vw", sm: "2vw" }}
                         >
