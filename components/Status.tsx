@@ -15,10 +15,22 @@ import { css } from "@emotion/react";
 import React from "react";
 
 const personality = {
-  D: "Dominance",
-  I: "Influence",
-  S: "Steadiness",
-  C: "Compliance",
+  D: {
+    label: "si Kuning",
+    color: "yellow",
+  },
+  I: {
+    label: "si Merah",
+    color: "red",
+  },
+  S: {
+    label: "si Biru",
+    color: "blue",
+  },
+  C: {
+    label: "si Hijau",
+    color: "green",
+  },
 };
 
 function Status({
@@ -111,15 +123,17 @@ function Status({
                     width={"100%"}
                     borderTopRadius={"13px"}
                     color={"#E7D7C5"}
-                    paddingTop={"20px"}
                   >
-                    <Heading
+                    {/* <Heading
                       fontSize={{ lg: "3.8vw", sm: "7vw" }}
                       lineHeight={"0"}
                       fontWeight={"extrabold"}
                     >
                       D
-                    </Heading>
+                    </Heading> */}
+                    <Box width={"60%"}>
+                      <Image src={`./D_dash.png`} alt={"D_dash"} />
+                    </Box>
                   </Center>
                   <Center
                     height={"50%"}
@@ -132,13 +146,13 @@ function Status({
                     </Heading>
                   </Center>
                 </Center>
-                <Text
+                {/* <Text
                   fontWeight={"bold"}
                   color={"#5C4B44"}
                   fontSize={{ lg: "0.8vw", sm: "2vw" }}
                 >
                   D-ominance
-                </Text>
+                </Text> */}
               </VStack>
               <VStack width={"25%"} height={"100%"}>
                 <Center flexDirection={"column"} width={"full"} height={"100%"}>
@@ -148,15 +162,17 @@ function Status({
                     width={"100%"}
                     borderTopRadius={"13px"}
                     color={"#E7D7C5"}
-                    paddingTop={"20px"}
                   >
-                    <Heading
+                    {/* <Heading
                       fontSize={{ lg: "3.8vw", sm: "7vw" }}
                       lineHeight={"0"}
                       fontWeight={"extrabold"}
                     >
                       I
-                    </Heading>
+                    </Heading> */}
+                    <Box width={"60%"}>
+                      <Image src={`./I_dash.png`} alt={"D_dash"} />
+                    </Box>
                   </Center>
                   <Center
                     height={"50%"}
@@ -169,13 +185,13 @@ function Status({
                     </Heading>
                   </Center>
                 </Center>
-                <Text
+                {/* <Text
                   fontWeight={"bold"}
                   color={"#5C4B44"}
                   fontSize={{ lg: "0.8vw", sm: "2vw" }}
                 >
                   I-nfluence
-                </Text>
+                </Text> */}
               </VStack>
               <VStack width={"25%"} height={"100%"}>
                 <Center flexDirection={"column"} width={"full"} height={"100%"}>
@@ -185,15 +201,17 @@ function Status({
                     width={"100%"}
                     borderTopRadius={"13px"}
                     color={"#E7D7C5"}
-                    paddingTop={"20px"}
                   >
-                    <Heading
+                    {/* <Heading
                       fontSize={{ lg: "3.8vw", sm: "7vw" }}
                       lineHeight={"0"}
                       fontWeight={"extrabold"}
                     >
                       S
-                    </Heading>
+                    </Heading> */}
+                    <Box width={"60%"}>
+                      <Image src={`./S_dash.png`} alt={"D_dash"} />
+                    </Box>
                   </Center>
                   <Center
                     height={"50%"}
@@ -206,13 +224,13 @@ function Status({
                     </Heading>
                   </Center>
                 </Center>
-                <Text
+                {/* <Text
                   fontWeight={"bold"}
                   color={"#5C4B44"}
                   fontSize={{ lg: "0.8vw", sm: "2vw" }}
                 >
                   S-teadiness
-                </Text>
+                </Text> */}
               </VStack>
               <VStack width={"25%"} height={"100%"}>
                 <Center flexDirection={"column"} width={"full"} height={"100%"}>
@@ -222,15 +240,17 @@ function Status({
                     width={"100%"}
                     borderTopRadius={"13px"}
                     color={"#E7D7C5"}
-                    paddingTop={"20px"}
                   >
-                    <Heading
+                    {/* <Heading
                       fontSize={{ lg: "3.8vw", sm: "7vw" }}
                       lineHeight={"0"}
                       fontWeight={"extrabold"}
                     >
                       C
-                    </Heading>
+                    </Heading> */}
+                    <Box width={"60%"}>
+                      <Image src={`./C_dash.png`} alt={"D_dash"} />
+                    </Box>
                   </Center>
                   <Center
                     height={"50%"}
@@ -243,13 +263,13 @@ function Status({
                     </Heading>
                   </Center>
                 </Center>
-                <Text
+                {/* <Text
                   fontWeight={"bold"}
                   color={"#5C4B44"}
                   fontSize={{ lg: "0.8vw", sm: "2vw" }}
                 >
                   C-ompliance
-                </Text>
+                </Text> */}
               </VStack>
             </HStack>
             <Divider
@@ -270,9 +290,15 @@ function Status({
                   fontSize={{ sm: "2vw", lg: "1.2vw" }}
                 >
                   Kamu adalah{" "}
-                  <span style={{ fontWeight: "bolder" }}>
+                  <span
+                    style={{
+                      fontWeight: "bolder",
+                      // @ts-ignore
+                      color: personality[personalityValue].color,
+                    }}
+                  >
                     {/* @ts-ignore */}
-                    {personality[personalityValue]}
+                    {personality[personalityValue].label}
                   </span>
                 </Text>
                 <Text
