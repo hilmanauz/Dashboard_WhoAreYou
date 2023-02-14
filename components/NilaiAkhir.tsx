@@ -146,7 +146,7 @@ function NilaiAkhir({
                           fontSize={{ lg: "1.3vw", sm: "2.3vw" }}
                           fontWeight={"bold"}
                         >
-                          22/22
+                          {userData.dataLogin.Stage2result2a?.Value && 0}/22
                         </Td>
                         <Td
                           textAlign={"center"}
@@ -154,7 +154,7 @@ function NilaiAkhir({
                           fontSize={{ lg: "1.3vw", sm: "2.3vw" }}
                           fontWeight={"bold"}
                         >
-                          22/22
+                          {userData.dataLogin.Stage2result2b?.Value && 0}/22
                         </Td>
                         <Td
                           textAlign={"center"}
@@ -163,7 +163,7 @@ function NilaiAkhir({
                           fontSize={{ lg: "1.3vw", sm: "2.3vw" }}
                           fontWeight={"bold"}
                         >
-                          22/22
+                          {userData.dataLogin.Stage2result2c?.Value && 0}/22
                         </Td>
                       </Tr>
                       <Tr color={"#BE9771"}>
@@ -202,7 +202,7 @@ function NilaiAkhir({
                           fontSize={{ lg: "1.3vw", sm: "2.3vw" }}
                           fontWeight={"bold"}
                         >
-                          22/22
+                          {userData.dataLogin.Stage2result2d?.Value && 0}/22
                         </Td>
                         <Td
                           textAlign={"center"}
@@ -210,7 +210,7 @@ function NilaiAkhir({
                           fontSize={{ lg: "1.3vw", sm: "2.3vw" }}
                           fontWeight={"bold"}
                         >
-                          22/22
+                          {userData.dataLogin.Stage2result2e?.Value && 0}/22
                         </Td>
                         <Td
                           textAlign={"center"}
@@ -219,7 +219,7 @@ function NilaiAkhir({
                           fontSize={{ lg: "1.3vw", sm: "2.3vw" }}
                           fontWeight={"bold"}
                         >
-                          22/22
+                          {userData.dataLogin.Stage2result2f?.Value && 0}/22
                         </Td>
                       </Tr>
                     </Tbody>
