@@ -11,7 +11,27 @@ import {
   Text,
   Divider,
 } from "@chakra-ui/react";
+import { css } from "@emotion/react";
 import React from "react";
+
+const personality = {
+  D: {
+    label: "si Kuning",
+    color: "yellow",
+  },
+  I: {
+    label: "si Merah",
+    color: "red",
+  },
+  S: {
+    label: "si Biru",
+    color: "blue",
+  },
+  C: {
+    label: "si Hijau",
+    color: "green",
+  },
+};
 
 function Status({
   userData,
@@ -21,6 +41,7 @@ function Status({
     accountInfo: any;
   };
 }) {
+  const personalityValue = userData.dataLogin.Stage1Grade.Value as string;
   return (
     <GridItem
       colSpan={2}
@@ -31,7 +52,7 @@ function Status({
       outlineOffset={"-11px"}
       position={"relative"}
     >
-      <Center height={"100%"} padding={"20px"}>
+      <Center height={"100%"} width={"100%"} padding={"8%"}>
         <Box
           position={"absolute"}
           top={{ sm: -4, md: -5, lg: -8 }}
@@ -67,35 +88,52 @@ function Status({
         </Box>
         {userData.dataLogin.Stage1Grade.Value ? (
           <VStack
-            width={{ lg: "80%", md: "85%" }}
-            paddingTop={{ md: "20px" }}
+            width={"100%"}
             gap={4}
+            height={{ lg: "95%", md: "60vh", sm: "95%" }}
+            css={css`
+              @media only screen and (orientation: landscape) and (max-width: 992px) {
+                height: auto;
+              }
+            `}
           >
             <Heading
               color={"#C5A17E"}
               marginBottom={"-5px"}
-              fontSize={{ lg: "2vw", md: "3vw", sm: "3vw" }}
+              fontSize={{ lg: "2vw", md: "3vw", sm: "3.5vw" }}
             >
               Personality Result
             </Heading>
-            <HStack width={"100%"} gap={2} spacing={{ sm: 0, md: 2 }}>
-              <VStack width={"25%"}>
-                <Center flexDirection={"column"} width={"full"} height={"25vh"}>
+            <HStack
+              width={"100%"}
+              gap={2}
+              spacing={{ sm: 0, md: 2 }}
+              height={"100%"}
+              css={css`
+                @media only screen and (orientation: landscape) and (max-width: 992px) {
+                  height: 50vh;
+                }
+              `}
+            >
+              <VStack width={"25%"} height={"100%"}>
+                <Center flexDirection={"column"} width={"full"} height={"100%"}>
                   <Center
                     height={"50%"}
                     bgColor={"#BE9771"}
                     width={"100%"}
                     borderTopRadius={"13px"}
                     color={"#E7D7C5"}
-                    paddingTop={"20px"}
                   >
-                    <Heading
+                    {/* <Heading
                       fontSize={{ lg: "3.8vw", sm: "7vw" }}
                       lineHeight={"0"}
                       fontWeight={"extrabold"}
                     >
                       D
-                    </Heading>
+                    </Heading> */}
+                    <Box width={"60%"}>
+                      <Image src={`./D_dash.png`} alt={"D_dash"} />
+                    </Box>
                   </Center>
                   <Center
                     height={"50%"}
@@ -108,31 +146,33 @@ function Status({
                     </Heading>
                   </Center>
                 </Center>
-                <Text
+                {/* <Text
                   fontWeight={"bold"}
                   color={"#5C4B44"}
                   fontSize={{ lg: "0.8vw", sm: "2vw" }}
                 >
                   D-ominance
-                </Text>
+                </Text> */}
               </VStack>
-              <VStack width={"25%"}>
-                <Center flexDirection={"column"} width={"full"} height={"25vh"}>
+              <VStack width={"25%"} height={"100%"}>
+                <Center flexDirection={"column"} width={"full"} height={"100%"}>
                   <Center
                     height={"50%"}
                     bgColor={"#BE9771"}
                     width={"100%"}
                     borderTopRadius={"13px"}
                     color={"#E7D7C5"}
-                    paddingTop={"20px"}
                   >
-                    <Heading
+                    {/* <Heading
                       fontSize={{ lg: "3.8vw", sm: "7vw" }}
                       lineHeight={"0"}
                       fontWeight={"extrabold"}
                     >
                       I
-                    </Heading>
+                    </Heading> */}
+                    <Box width={"60%"}>
+                      <Image src={`./I_dash.png`} alt={"D_dash"} />
+                    </Box>
                   </Center>
                   <Center
                     height={"50%"}
@@ -145,31 +185,33 @@ function Status({
                     </Heading>
                   </Center>
                 </Center>
-                <Text
+                {/* <Text
                   fontWeight={"bold"}
                   color={"#5C4B44"}
                   fontSize={{ lg: "0.8vw", sm: "2vw" }}
                 >
                   I-nfluence
-                </Text>
+                </Text> */}
               </VStack>
-              <VStack width={"25%"}>
-                <Center flexDirection={"column"} width={"full"} height={"25vh"}>
+              <VStack width={"25%"} height={"100%"}>
+                <Center flexDirection={"column"} width={"full"} height={"100%"}>
                   <Center
                     height={"50%"}
                     bgColor={"#BE9771"}
                     width={"100%"}
                     borderTopRadius={"13px"}
                     color={"#E7D7C5"}
-                    paddingTop={"20px"}
                   >
-                    <Heading
+                    {/* <Heading
                       fontSize={{ lg: "3.8vw", sm: "7vw" }}
                       lineHeight={"0"}
                       fontWeight={"extrabold"}
                     >
                       S
-                    </Heading>
+                    </Heading> */}
+                    <Box width={"60%"}>
+                      <Image src={`./S_dash.png`} alt={"D_dash"} />
+                    </Box>
                   </Center>
                   <Center
                     height={"50%"}
@@ -182,31 +224,33 @@ function Status({
                     </Heading>
                   </Center>
                 </Center>
-                <Text
+                {/* <Text
                   fontWeight={"bold"}
                   color={"#5C4B44"}
                   fontSize={{ lg: "0.8vw", sm: "2vw" }}
                 >
                   S-teadiness
-                </Text>
+                </Text> */}
               </VStack>
-              <VStack width={"25%"}>
-                <Center flexDirection={"column"} width={"full"} height={"25vh"}>
+              <VStack width={"25%"} height={"100%"}>
+                <Center flexDirection={"column"} width={"full"} height={"100%"}>
                   <Center
                     height={"50%"}
                     bgColor={"#BE9771"}
                     width={"100%"}
                     borderTopRadius={"13px"}
                     color={"#E7D7C5"}
-                    paddingTop={"20px"}
                   >
-                    <Heading
+                    {/* <Heading
                       fontSize={{ lg: "3.8vw", sm: "7vw" }}
                       lineHeight={"0"}
                       fontWeight={"extrabold"}
                     >
                       C
-                    </Heading>
+                    </Heading> */}
+                    <Box width={"60%"}>
+                      <Image src={`./C_dash.png`} alt={"D_dash"} />
+                    </Box>
                   </Center>
                   <Center
                     height={"50%"}
@@ -219,13 +263,13 @@ function Status({
                     </Heading>
                   </Center>
                 </Center>
-                <Text
+                {/* <Text
                   fontWeight={"bold"}
                   color={"#5C4B44"}
                   fontSize={{ lg: "0.8vw", sm: "2vw" }}
                 >
                   C-ompliance
-                </Text>
+                </Text> */}
               </VStack>
             </HStack>
             <Divider
@@ -233,12 +277,9 @@ function Status({
               borderBottomWidth={"3px"}
               width={"100%"}
             />
-            <HStack>
+            <HStack height={"100%"}>
               <Box width={"30%"}>
-                <Image
-                  src={`./${userData.dataLogin.Stage1Grade.Value}_dash.png`}
-                  alt={"D_dash"}
-                />
+                <Image src={`./${personalityValue}_dash.png`} alt={"D_dash"} />
               </Box>
               <Spacer />
               <VStack width={"70%"} alignItems={"normal"}>
@@ -248,7 +289,17 @@ function Status({
                   letterSpacing={0.5}
                   fontSize={{ sm: "2vw", lg: "1.2vw" }}
                 >
-                  Kamu adalah tipe
+                  Kamu adalah{" "}
+                  <span
+                    style={{
+                      fontWeight: "bolder",
+                      // @ts-ignore
+                      color: personality[personalityValue].color,
+                    }}
+                  >
+                    {/* @ts-ignore */}
+                    {personality[personalityValue].label}
+                  </span>
                 </Text>
                 <Text
                   letterSpacing={0.3}

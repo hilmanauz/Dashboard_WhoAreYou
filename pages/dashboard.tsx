@@ -1,4 +1,5 @@
 import { Box, Center, Grid, Heading, VStack } from "@chakra-ui/react";
+import { css } from "@emotion/react";
 import axios from "axios";
 import { getCookie } from "cookies-next";
 import { GetServerSideProps, InferGetServerSidePropsType } from "next";
@@ -50,6 +51,12 @@ function Dashboard(
         paddingTop={{ lg: "50px", sm: "30px" }}
         paddingBottom={"20px"}
         height={"91%"}
+        minHeight={"850px"}
+        css={css`
+          @media only screen and (orientation: landscape) and (max-width: 1200px) {
+            min-height: 0px;
+          }
+        `}
         width={{ lg: "90%", sm: "95%" }}
         templateRows={"repeat(14, 1fr)"}
         templateColumns={{ lg: "repeat(4, 1fr)", sm: "repeat(1, 1fr)" }}
