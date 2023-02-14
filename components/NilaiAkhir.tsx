@@ -7,21 +7,15 @@ import {
   HStack,
   Text,
   Image,
-  Spacer,
   Table,
   TableContainer,
   Tbody,
   Td,
-  Th,
   Tr,
-  Thead,
-  Divider,
 } from "@chakra-ui/react";
 import { css } from "@emotion/react";
 import _ from "lodash";
 import React from "react";
-
-const percentageCount = (value: number) => Math.round((value / 24) * 100);
 
 function NilaiAkhir({
   userData,
@@ -155,7 +149,10 @@ function NilaiAkhir({
                           fontSize={{ lg: "1.3vw", sm: "2.3vw" }}
                           fontWeight={"bold"}
                         >
-                          {userData.dataLogin.Stage2result2a?.Value && 0}/22
+                          {_.isEmpty(userData.dataLogin.Stage2result2a?.Value)
+                            ? 0
+                            : userData.dataLogin.Stage2result2a?.Value}
+                          /22
                         </Td>
                         <Td
                           textAlign={"center"}
@@ -163,7 +160,10 @@ function NilaiAkhir({
                           fontSize={{ lg: "1.3vw", sm: "2.3vw" }}
                           fontWeight={"bold"}
                         >
-                          {userData.dataLogin.Stage2result2b?.Value && 0}/22
+                          {_.isEmpty(userData.dataLogin.Stage2result2b?.Value)
+                            ? 0
+                            : userData.dataLogin.Stage2result2b?.Value}
+                          /22
                         </Td>
                         <Td
                           textAlign={"center"}
@@ -172,7 +172,10 @@ function NilaiAkhir({
                           fontSize={{ lg: "1.3vw", sm: "2.3vw" }}
                           fontWeight={"bold"}
                         >
-                          {userData.dataLogin.Stage2result2c?.Value && 0}/22
+                          {_.isEmpty(userData.dataLogin.Stage2result2c?.Value)
+                            ? 0
+                            : userData.dataLogin.Stage2result2c?.Value}
+                          /22
                         </Td>
                       </Tr>
                       <Tr color={"#BE9771"}>
@@ -211,7 +214,10 @@ function NilaiAkhir({
                           fontSize={{ lg: "1.3vw", sm: "2.3vw" }}
                           fontWeight={"bold"}
                         >
-                          {userData.dataLogin.Stage2result2d?.Value && 0}/22
+                          {_.isEmpty(userData.dataLogin.Stage2result2d?.Value)
+                            ? 0
+                            : userData.dataLogin.Stage2result2d?.Value}
+                          /22
                         </Td>
                         <Td
                           textAlign={"center"}
@@ -219,7 +225,10 @@ function NilaiAkhir({
                           fontSize={{ lg: "1.3vw", sm: "2.3vw" }}
                           fontWeight={"bold"}
                         >
-                          {userData.dataLogin.Stage2result2e?.Value && 0}/22
+                          {_.isEmpty(userData.dataLogin.Stage2result2e?.Value)
+                            ? 0
+                            : userData.dataLogin.Stage2result2e?.Value}
+                          /22
                         </Td>
                         <Td
                           textAlign={"center"}
@@ -228,7 +237,10 @@ function NilaiAkhir({
                           fontSize={{ lg: "1.3vw", sm: "2.3vw" }}
                           fontWeight={"bold"}
                         >
-                          {userData.dataLogin.Stage2result2f?.Value && 0}/22
+                          {_.isEmpty(userData.dataLogin.Stage2result2f?.Value)
+                            ? 0
+                            : userData.dataLogin.Stage2result2f?.Value}
+                          /22
                         </Td>
                       </Tr>
                     </Tbody>
