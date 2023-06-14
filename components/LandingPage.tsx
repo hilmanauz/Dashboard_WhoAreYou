@@ -17,6 +17,9 @@ import {
   useDisclosure,
   Button,
   Stack,
+  useMediaQuery,
+  FormControl,
+  FormHelperText,
 } from "@chakra-ui/react";
 import React from "react";
 import Scrollbars from "rc-scrollbars";
@@ -43,6 +46,7 @@ const paddingContent = { lg: "150px", md: "100px", sm: "80px" };
 
 function LandingPage() {
   const loginDisclosure = useDisclosure();
+  const [isLargerThan800] = useMediaQuery("(min-width: 800px)");
   const client = useClient();
   const dataLogin = client.getUserData();
   const validateToken = client.validateEntityToken();
@@ -122,100 +126,122 @@ function LandingPage() {
                   !loginDisclosure.isOpen && (
                     <Flex
                       marginTop={"50px"}
-                      gap={"30px"}
+                      gap={"20px"}
                       flexDirection={{ sm: "column", md: "row" }}
                     >
-                      <Box
-                        padding={"10px"}
-                        bgColor={"#F9F3EA"}
-                        borderRadius={"10px"}
-                        boxShadow={
-                          "0 5px 0 0 rgb(0 0 0 / 15%), 0 0 5px 0 rgb(0 0 0 / 14%)"
-                        }
-                      >
-                        <Button
-                          size={fontSize}
-                          width={"full"}
-                          bgColor={"#BE9770"}
-                          paddingX={"80px"}
-                          paddingY={"30px"}
-                          _hover={{ opacity: "0.8" }}
-                          onClick={() =>
-                            Router.push(
-                              "https://play.everidea.id/games/buildtest/thinkhalf/whoareyou/"
-                            )
-                          }
-                          color={"white"}
-                          fontSize={"22px"}
-                          marginTop={"-4px"}
-                          boxShadow={"0 4px #815230"}
-                          _active={{
-                            position: "relative",
-                            top: "4px",
-                            boxShadow: "none",
-                          }}
+                      <FormControl width={"auto"}>
+                        <Flex
+                          gap={"30px"}
+                          flexDirection={{ sm: "column", md: "row" }}
                         >
-                          <HStack spacing={"10px"}>
-                            <Image
-                              src="./Desktop_Icon.png"
-                              alt="Desktop_Icon"
-                            />
-                            <Heading
+                          <Box
+                            padding={"10px"}
+                            bgColor={"#F9F3EA"}
+                            borderRadius={"10px"}
+                            boxShadow={
+                              "0 5px 0 0 rgb(0 0 0 / 15%), 0 0 5px 0 rgb(0 0 0 / 14%)"
+                            }
+                          >
+                            <Button
                               size={fontSize}
-                              marginY={"auto !important"}
-                              height={"full"}
-                              lineHeight={"0"}
+                              width={"full"}
+                              bgColor={"#BE9770"}
+                              paddingX={"80px"}
+                              paddingY={"30px"}
+                              disabled
+                              _hover={{ opacity: "0.8" }}
+                              onClick={() =>
+                                Router.push(
+                                  "https://play.everidea.id/games/buildtest/thinkhalf/whoareyou/"
+                                )
+                              }
+                              color={"white"}
+                              fontSize={"22px"}
+                              // marginTop={"-4px"}
+                              boxShadow={"0 4px #815230"}
+                              // _active={{
+                              //   position: "relative",
+                              //   top: "4px",
+                              //   boxShadow: "none",
+                              // }}
                             >
-                              Desktop
-                            </Heading>
-                          </HStack>
-                        </Button>
-                      </Box>
-                      <Box
-                        padding={"10px"}
-                        bgColor={"#F9F3EA"}
-                        borderRadius={"10px"}
-                        boxShadow={
-                          "0 5px 0 0 rgb(0 0 0 / 15%), 0 0 5px 0 rgb(0 0 0 / 14%)"
-                        }
-                      >
-                        <Button
-                          size={fontSize}
-                          width={"full"}
-                          bgColor={"#BE9770"}
-                          paddingX={"80px"}
-                          paddingY={"30px"}
-                          onClick={() =>
-                            Router.push(
-                              "https://play.everidea.id/games/buildtest/thinkhalf/mobile/whoareyou/"
-                            )
-                          }
-                          _hover={{ opacity: "0.8" }}
+                              <HStack spacing={"10px"}>
+                                <Image
+                                  src="./Desktop_Icon.png"
+                                  alt="Desktop_Icon"
+                                />
+                                <Heading
+                                  size={fontSize}
+                                  marginY={"auto !important"}
+                                  height={"full"}
+                                  lineHeight={"0"}
+                                >
+                                  Desktop
+                                </Heading>
+                              </HStack>
+                            </Button>
+                          </Box>
+                          <Box
+                            padding={"10px"}
+                            bgColor={"#F9F3EA"}
+                            borderRadius={"10px"}
+                            boxShadow={
+                              "0 5px 0 0 rgb(0 0 0 / 15%), 0 0 5px 0 rgb(0 0 0 / 14%)"
+                            }
+                          >
+                            <Button
+                              size={fontSize}
+                              width={"full"}
+                              bgColor={"#BE9770"}
+                              paddingX={"80px"}
+                              paddingY={"30px"}
+                              disabled
+                              onClick={() =>
+                                Router.push(
+                                  "https://play.everidea.id/games/buildtest/thinkhalf/mobile/whoareyou/"
+                                )
+                              }
+                              _hover={{ opacity: "0.8" }}
+                              color={"white"}
+                              fontSize={"22px"}
+                              // marginTop={"-4px"}
+                              boxShadow={"0 4px #815230"}
+                              // _active={{
+                              //   position: "relative",
+                              //   top: "4px",
+                              //   boxShadow: "none",
+                              // }}
+                            >
+                              <HStack spacing={"10px"}>
+                                <Image
+                                  src="./Mobile_Icon.png"
+                                  alt="Mobile_Icon"
+                                />
+                                <Heading
+                                  size={fontSize}
+                                  marginY={"auto !important"}
+                                  height={"full"}
+                                  lineHeight={"0"}
+                                >
+                                  Mobile
+                                </Heading>
+                              </HStack>
+                            </Button>
+                          </Box>
+                        </Flex>
+                        <FormHelperText
+                          textAlign={"center"}
                           color={"white"}
-                          fontSize={"22px"}
-                          marginTop={"-4px"}
-                          boxShadow={"0 4px #815230"}
-                          _active={{
-                            position: "relative",
-                            top: "4px",
-                            boxShadow: "none",
-                          }}
+                          fontSize={"md"}
+                          fontWeight={"extrabold"}
                         >
-                          <HStack spacing={"10px"}>
-                            <Image src="./Mobile_Icon.png" alt="Mobile_Icon" />
-                            <Heading
-                              size={fontSize}
-                              marginY={"auto !important"}
-                              height={"full"}
-                              lineHeight={"0"}
-                            >
-                              Mobile
-                            </Heading>
-                          </HStack>
-                        </Button>
-                      </Box>
+                          <span style={{ fontSize: "25px" }}>&#9757;</span>{" "}
+                          Under Maintenance
+                        </FormHelperText>
+                      </FormControl>
                       <Box
                         padding={"10px"}
+                        height={"min-content"}
                         bgColor={"#F9F3EA"}
                         borderRadius={"10px"}
                         boxShadow={
